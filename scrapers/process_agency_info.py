@@ -6,43 +6,36 @@ from scrape_data import ScrapeSocialInfo
 
 class ProcessAgencyInfo:
 
-    def __init__(self):
+    def __init__(self, agency):
         self.agency_firms = []
+        self.agency = agency
+        self.url = agency['url']
         self.buckets = ["security_and_privacy","outreach_and_communication","website_accessibility"]
-        __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-        try:
-            with open(os.path.join(__location__,'urls.json'), 'r') as f:
-                self.agency_firms = json.load(f)
-        except Exception as ex:
-            print(f"An error occurred while reading the firm input {str(ex)}")
+
 
     def process_agency_info(self):
         try:
-            all_agency_info=[]
-            id_count = 109
-            for url in self.agency_firms['urls']:
-                # url = self.agency_firms['urls']
-                page = requests.get(url, timeout=30)
-                scrape_social_info = ScrapeSocialInfo(page, url)
-                social_media_info, contact_info = scrape_social_info.scrape_info()
-                profile_info = {}
-                for bucket in self.buckets:
-                    if bucket == "security_and_privacy":
-                        profile_info[bucket] = self.get_security_privacy_info(url)
-                    elif bucket == "outreach_and_communication":
-                        profile_info[bucket] = self.get_outreach_communication_info(social_media_info, contact_info)
-                    elif bucket == "website_accessibility":
-                        profile_info[bucket] = self.get_website_accessibility_info()
+            
+            page = requests.get(self.url, timeout=30)
+            scrape_social_info = ScrapeSocialInfo(page, self.url)
+            social_media_info, contact_info = scrape_social_info.scrape_info()
+            profile_info = {}
+            for bucket in self.buckets:
+                if bucket == "security_and_privacy":
+                    profile_info[bucket] = self.get_security_privacy_info(self.url)
+                elif bucket == "outreach_and_communication":
+                    profile_info[bucket] = self.get_outreach_communication_info(social_media_info, contact_info)
+                elif bucket == "website_accessibility":
+                    profile_info[bucket] = self.get_website_accessibility_info()
 
-                id_count = id_count + 1
                 agency_details = {
-                     "id": id_count,
-                     "url": url,
+                     "id": self.agency['id'],
+                     "name": self.agency['name'],
+                     "url": self.url,
                      "profile": profile_info
                 }
-                all_agency_info.append(agency_details)
-            all_info_json = json.dumps(all_agency_info)
-            print(all_info_json)
+            
+            return agency_details
         except Exception as ex:
             print(f"An error occurred while processing the agency information: {str(ex)}")
     
@@ -95,5 +88,5 @@ class ProcessAgencyInfo:
          }
 
 
-agency_info = ProcessAgencyInfo()
-agency_info.process_agency_info()
+# agency_info = ProcessAgencyInfo()
+# agency_info.process_agency_info()
