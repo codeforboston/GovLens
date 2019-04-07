@@ -19,7 +19,7 @@
   }  
   .jumbotron {
     background-color: #ff0000;
-    background-image: url('images/map boston.png');
+    background-image: url('images/map_boston.png');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
