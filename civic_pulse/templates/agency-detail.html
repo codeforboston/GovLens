@@ -240,8 +240,8 @@
   <div class="row">
     <div>
       <h2>About {{ agency }}</h2>
-      <h4>The City of Boston handles all the administrative functions for Massachusetts’ largest and a mostly beloved city.</h4>
-      <br><a class="btn btn-primary" href="https://www.cityofboston.gov" role="button" target='_blank'>Visit Boston's website</a>
+      <h4>Insert agency description</h4>
+      <br><a class="btn btn-primary" href="{{ agency.website }}" role="button" target='_blank'>Visit website</a>
     </div>
   </div>
 </div>
@@ -253,7 +253,7 @@
         <span class="glyphicon glyphicon-lock logo-small slideanim"></span>
       </div>
       <div class="col-sm-9">
-        <h4><span class='score text-green'>7/10</span> Boston ranks higher than 75% of agencies on our security and privacy criteria. <a href="#security">See why.</a></h4><br>
+        <h4><span class='score text-green'>7/10</span> {{ agency }} ranks higher than 75% of agencies on our security and privacy criteria. <a href="#security">See why.</a></h4><br>
       </div>
     </div>
     <div class='col-sm-4'>
@@ -261,7 +261,7 @@
         <span class="glyphicon glyphicon-user logo-small slideanim"></span>
       </div>
       <div class="col-sm-9">
-        <h4><span class='score text-red'>5/10</span> Boston ranks lower than 53% of agencies on our accessibility criteria. <a href='#accessibility'>See why.</a></h4><br>
+        <h4><span class='score text-red'>5/10</span> {{ agency }} ranks lower than 53% of agencies on our accessibility criteria. <a href='#accessibility'>See why.</a></h4><br>
       </div>
     </div>
       <div class='col-sm-4'>
@@ -269,7 +269,7 @@
         <span class="glyphicon glyphicon-bullhorn logo-small slideanim"></span>
       </div>
       <div class="col-sm-9">
-        <h4><span class='score text-green'>7/10</span> Boston ranks higher than 79% of agencies on our communication criteria. <a href='#communication'>See why.</a></h4><br>
+        <h4><span class='score text-green'>7/10</span> {{ agency }} ranks higher than 79% of agencies on our communication criteria. <a href='#communication'>See why.</a></h4><br>
       </div>
     </div>
   </div>
@@ -281,7 +281,7 @@
 <!-- Container (Scoring Section) -->
 <div id="pricing" class="container-fluid">
   <div class="text-center">
-    <h3>We test each agency once a week. We last checked cityofboston.gov on 1/1/19.</h3>
+    <h3>We test each agency once a week. We last checked {{ agency.website }} {{ last_entry.created_date | timesince }} ago.</h3>
     <a href='#'>Read more about our methodology.</a>
   </div>
   <div class="row slideanim">
