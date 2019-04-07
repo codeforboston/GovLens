@@ -18,16 +18,19 @@ class Agency(models.Model):
 
 class Entry(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
-    agency = models.ForeignKey(Agency)
+    agency = models.ForeignKey(Agency,on_delete=models.CASCADE)
 
-    # # Accessibility
-    # mobile_friendly = models.BooleanField(default=False)
-    #
-    # # Security
-    # https_enabled = models.BooleanField(default=False)
-    #
-    # # Outreach
-    # has_social_media = models.BooleanField(default=False)
+    # Security/Privacy
+    https_enabled = models.BooleanField(default=False)
+    has_privacy_policy = models.BooleanField(default=False)
+
+    # A11y
+    mobile_friendly = models.BooleanField(default=False)
+    good_performance = models.BooleanField(default=False)
+
+    # Outreach/Communication
+    has_social_media = models.BooleanField(default=False)
+    has_contact_info = models.BooleanField(default=False)
 
     def __str__(self):
         return self.agency.__str__() + "_" + self.created_date.strftime("%m_%d")
