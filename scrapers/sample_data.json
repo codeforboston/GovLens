@@ -1,0 +1,1867 @@
+[
+    {
+        "id": 110,
+        "url": "http://www.mass.gov/eohhs/gov/departments/dph/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/massdph",
+                        "https://www.linkedin.com/company/massachusetts-department-of-public-health",
+                        "https://www.youtube.com/user/MassDPH",
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "(617) 573-1600"
+                        ],
+                        "address": " 5 p.m.               Apr 09      Board of Trustees Meeting\\u00a0            110 Cherry Street, Conference Room A, Holyoke, MA 01040"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 111,
+        "url": "https://www.massport.com/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/Massport",
+                        "https://www.facebook.com/massachusettsportauthority/",
+                        "https://www.linkedin.com/company/massachusetts-port-authority",
+                        "https://www.youtube.com/massportbos"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "617-561-3333",
+                            "800-262-3335",
+                            "617-568-7514",
+                            "617-568-7300"
+                        ],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 112,
+        "url": "https://www.massbbo.org/Who_We_Are_OBC_ACAP",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": false,
+                    "info": []
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "webmaster@massbbo.org",
+                            "RegistrationDept@massbbo.org",
+                            "registration1@massbbodemo.force.com"
+                        ],
+                        "phone_number": [
+                            "(617) 728-8875",
+                            "(617) 728-8750",
+                            "(617) 725-8050"
+                        ],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 113,
+        "url": "https://www.publiccounsel.net/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": false,
+                    "info": []
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 114,
+        "url": "http://www.mass.gov/ig/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/MassOIG",
+                        "https://www.linkedin.com/company/office-of-the-inspector-general/",
+                        "https://www.youtube.com/channel/UC1ooTjG2C7Ly3XINsT7RS3g/videos",
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "MA-IGO-General-Mail@state.ma.us",
+                            "MA-IGO-Training@state.ma.us",
+                            "IGO-Employment@state.ma.us",
+                            "30BHotline@state.ma.us",
+                            "IGO-FightFraud@state.ma.us",
+                            "MassDOTFraudHotline@state.ma.us"
+                        ],
+                        "phone_number": [
+                            "(617) 727-9140",
+                            "(617) 723-2334",
+                            "(617) 722-8838",
+                            "(800) 322-1323",
+                            "(617) 722-8822",
+                            "(855) 963-2580"
+                        ],
+                        "address": " 1 Ashburton Place Room 1311 Boston, MA 02108"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 115,
+        "url": "http://massgaming.com/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": false,
+                    "info": []
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 116,
+        "url": "http://www.mass.gov/ocabr/government/oca-agencies/doi-lp/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "(617) 521-7794",
+                            "(877)-563-4467",
+                            "(877) 563-4467"
+                        ],
+                        "address": " 1000 Washington Street                                                                        , Suite 810, Boston, MA 02118"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 117,
+        "url": "http://www.mass.gov/eea/agencies/massdep/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/MassDEP",
+                        "https://www.youtube.com/channel/UCswijd-Vuwa0jMR4EroSm8w",
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "env.internet@mass.gov"
+                        ],
+                        "phone_number": [
+                            "629-8940",
+                            "(617) 626-1181",
+                            "(617) 626-1000"
+                        ],
+                        "address": " 100 Cambridge St., Suite 900, Boston, MA 02114"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 118,
+        "url": "http://www.mass.gov/courts/court-info/courthouses/bri-chi/cambridge-district-court-generic.html",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "JurorHelp@jud.state.ma.us",
+                            "daniel.kallenberg@jud.state.ma.us"
+                        ],
+                        "phone_number": [
+                            "(781) 395-2035",
+                            "(781) 306-2715",
+                            "(781) 306-2746",
+                            "(781) 306-2750",
+                            "(781) 395-2147"
+                        ],
+                        "address": " 4040 Mystic Valley Parkway, Medford, MA 02155"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 119,
+        "url": "http://www.mass.gov/eopss/law-enforce-and-cj/law-enforce/mptc/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "(781) 437-0300",
+                            "(781) 963-0235"
+                        ],
+                        "address": " 6 Adams St. Randolph, MA 02368"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 120,
+        "url": "http://www.mass.gov/eohhs/gov/departments/dmh/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/massdmh",
+                        "https://www.linkedin.com/company-beta/5430359/",
+                        "https://www.instagram.com/massdmh/",
+                        "https://www.youtube.com/user/DMHCONNECTIONS",
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "dmhinfo@state.ma.us"
+                        ],
+                        "phone_number": [
+                            "(800) 221-0053",
+                            "(617) 626-8000"
+                        ],
+                        "address": " 25 Staniford St., Boston, MA 02114"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 121,
+        "url": "http://www.mass.gov/eopss/law-enforce-and-cj/prisons/doc-facilities/northeastern-correctional-center.html",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 122,
+        "url": "http://vineyardtransit.com/Pages/index",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "http://www.facebook.com/pages/Marthas-Vineyard-Transit-Authority-VTA/154148694652203"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 123,
+        "url": "http://lrta.com/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": false,
+                    "info": []
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "CustomerService@lrta.com",
+                            "l.mitchell@lrta.com",
+                            "parking@lrta.com"
+                        ],
+                        "phone_number": [
+                            "(978) 459-0164",
+                            "978-459-0152",
+                            "(978) 459-0152",
+                            "978-452-6161",
+                            "978 458-9673",
+                            "(978) 452-6161"
+                        ],
+                        "address": " 115 Thorndike Street, Lowell, MA 01852"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 124,
+        "url": "http://www.mass.gov/eohhs/gov/departments/dph/programs/community-health/oral-health/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": false,
+                    "info": []
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 125,
+        "url": "http://www.bc.edu/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/BostonCollege?ref_src=twsrc%5Etfw",
+                        "https://www.facebook.com/BostonCollege",
+                        "https://twitter.com/bostoncollege",
+                        "https://instagram.com/bostoncollege/",
+                        "https://www.youtube.com/user/BostonCollege",
+                        "https://www.linkedin.com/school/boston-college/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "gsasinfo@bc.edu",
+                            "studentservices@bc.edu",
+                            "orientation@bc.edu",
+                            "carctr@bc.edu",
+                            "bclawadm@bc.edu",
+                            "bc-law@bkstr.com",
+                            "development@bc.edu",
+                            "swadmit@bc.edu",
+                            "bc@bkstr.com",
+                            "stmadm@bc.edu",
+                            "bcmba@bc.edu",
+                            "financial.aid@bc.edu",
+                            "alumni.comments@bc.edu",
+                            "athletics@bc.edu",
+                            "gsoe@bc.edu",
+                            "soninfo@bc.edu",
+                            "help.center@bc.edu"
+                        ],
+                        "phone_number": [
+                            "617-552-0549",
+                            "617-552-4928",
+                            "617-552-3282",
+                            "617-552-3200",
+                            "800-294-0294",
+                            "617-552-4405",
+                            "617-552-3265",
+                            "617-552-4920",
+                            "617-552-3920",
+                            "800-978-0978",
+                            "617-552-3330",
+                            "617-552-4440",
+                            "617-552-8800",
+                            "617-552-4403",
+                            "617-552-0109",
+                            "617-552-8000",
+                            "617-552-3281",
+                            "617-552-4700",
+                            "617-552-3000",
+                            "617-552-3430",
+                            "617-552-3300",
+                            "617-552-4470",
+                            "617-552-4400",
+                            "617-552-4214",
+                            "617-552-4351",
+                            "617-552-6506",
+                            "617-552-3156",
+                            "617-552-4024",
+                            "617-552-3100",
+                            "617-552-4444",
+                            "617-552-3520"
+                        ],
+                        "address": " 140 Commonwealth Avenue Chestnut Hill, MA 02467"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 126,
+        "url": "http://www.mass.gov/ocabr/government/oca-agencies/dpl-lp/opsi/massachusetts-department-of-public-safety.html",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "(617) 727-3200",
+                            "(978) 513-9660",
+                            "962-8308"
+                        ],
+                        "address": " 365 East Street , Tewksbury, MA 01876        directions\\u00a0     Springfield Office        One Armory Square , Building 15, 2nd Floor, Springfield, MA 01102"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 127,
+        "url": "http://www.mass.gov/eopss/law-enforce-and-cj/prisons/doc-facilities/south-middlesex-correctional-center.html",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 128,
+        "url": "http://www.mass.gov/eopss/law-enforce-and-cj/prisons/doc-facilities/mci-framingham.html",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 129,
+        "url": "http://www.mapc.org/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": false,
+                    "info": []
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 130,
+        "url": "http://www.mbta.com/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/MBTA",
+                        "https://www.instagram.com/mbtapics/",
+                        "https://twitter.com/MBTA",
+                        "https://www.youtube.com/user/mbtagm/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "mbta.rao@mbta.com"
+                        ],
+                        "phone_number": [
+                            "617-222-1212",
+                            "617-222-1200",
+                            "617-222-5146",
+                            "617-222-3200"
+                        ],
+                        "address": " 10 Park Plaza               Suite 5610               Boston, MA 02116"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 131,
+        "url": "http://www.mass.gov/da/cape/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 132,
+        "url": "http://www.masslottery.com/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/MAStateLottery",
+                        "https://www.facebook.com/#!/MAStateLottery",
+                        "https://www.youtube.com/massstatelottery",
+                        "https://instagram.com/mastatelottery"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "webmaster@masslottery.com"
+                        ],
+                        "phone_number": [
+                            "(413) 781-3880",
+                            "(781) 848-7755",
+                            "(781) 935-2668",
+                            "125-3573",
+                            "(508) 755-7855",
+                            "(508) 985-9892",
+                            "(781) 849-5555"
+                        ],
+                        "address": " 150 Mount Vernon Street \\r Dorchester, MA 02125"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 133,
+        "url": "https://www.uml.edu/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/umlowell",
+                        "https://twitter.com/umasslowell",
+                        "https://www.youtube.com/user/umasslowell",
+                        "https://instagram.com/umasslowell",
+                        "https://www.linkedin.com/school/university-of-massachusetts-lowell/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "978-934-4000",
+                            "854-2874"
+                        ],
+                        "address": " 220 Pawtucket St.  Lowell, MA 01854"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 134,
+        "url": "http://www.mass.gov/lwd/labor-relations/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "efile.dlr@mass.gov"
+                        ],
+                        "phone_number": [
+                            "(617) 626-7157",
+                            "(617) 626-7132",
+                            "(413) 784-1230"
+                        ],
+                        "address": " 19 Staniford Street, 1st Floor, Boston, MA 02114"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 135,
+        "url": "http://www.mass.gov/eea/agencies/dfg/dfw/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/MassWildlife",
+                        "https://www.instagram.com/mass.wildlife/",
+                        "https://www.youtube.com/user/masswildlife",
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "Mass.Wildlife@state.ma.us"
+                        ],
+                        "phone_number": [
+                            "508-389-7890",
+                            "(508) 389-6300"
+                        ],
+                        "address": " 1 Rabbit Hill Road, Westborough, MA 01581"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 136,
+        "url": "http://www.mass.gov/eea/agencies/agr/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://twitter.com/MassDeptAgr",
+                        "https://www.facebook.com/MassDeptAgr/",
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "114-2151",
+                            "774-419-1800",
+                            "413-548-1901",
+                            "413-548-1900",
+                            "617-626-1850",
+                            "617-626-1700"
+                        ],
+                        "address": " 67 Conz Street, Northampton, MA 01060"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 137,
+        "url": "http://www.mass.gov/dppc/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": false,
+                    "info": {
+                        "email": [],
+                        "phone_number": [],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 138,
+        "url": "http://www.umassd.edu/law/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/UMassDLaw",
+                        "https://twitter.com/UMassLaw",
+                        "https://www.instagram.com/umasslaw/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [
+                            "lawadmissions@umassd.edu",
+                            "508.985.1175lawadmissions@umassd.edu"
+                        ],
+                        "phone_number": [
+                            "508.985.1110",
+                            "508.985.1163",
+                            "508.985.1127",
+                            "508.999.8107",
+                            "508.985.1147",
+                            "508.985.1155",
+                            "508.985.1107",
+                            "508.985.1106",
+                            "508.985.1100",
+                            "508.985.1186",
+                            "508.999.8180",
+                            "747-1252",
+                            "508.999.8982",
+                            "508.985.1149",
+                            "508.985.1168",
+                            "508.985.1115",
+                            "508.985.1175",
+                            "508.985.1136",
+                            "508.985.1126",
+                            "508.985.1167",
+                            "508.985.1187",
+                            "508.999.8711",
+                            "508.999.8650",
+                            "508.985.1138",
+                            "508.999.8140"
+                        ],
+                        "address": []
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 139,
+        "url": "http://www.mass.gov/courts/court-info/trial-court/dc/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "(617) 788-8985",
+                            "(617) 788-8810",
+                            "(617) 788-8809"
+                        ],
+                        "address": " 24 New Chardon St. 1st Floor Boston, MA 02114"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    },
+    {
+        "id": 140,
+        "url": "http://www.mass.gov/ethics/",
+        "profile": {
+            "security_and_privacy": {
+                "https": {
+                    "met_criteria": false,
+                    "info": null
+                },
+                "privacy_policies": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            },
+            "outreach_and_communication": {
+                "social_media_access": {
+                    "met_criteria": true,
+                    "info": [
+                        "https://www.facebook.com/massgov",
+                        "https://twitter.com/massgov",
+                        "https://www.linkedin.com/company/commonwealth-of-massachusetts",
+                        "https://www.youtube.com/user/massgov",
+                        "https://www.instagram.com/massgov/"
+                    ]
+                },
+                "contact_access": {
+                    "met_criteria": true,
+                    "info": {
+                        "email": [],
+                        "phone_number": [
+                            "617-371-9511",
+                            "617-371-9502",
+                            "617-371-9504",
+                            "617-371-9517",
+                            "617-371-9508",
+                            "617-371-9501",
+                            "617-371-9505",
+                            "617-371-9507",
+                            "617-371-9509",
+                            "617-371-9526",
+                            "(617) 723-5851",
+                            "(617) 371-9500",
+                            "617-371-9519",
+                            "617-371-9512",
+                            "617-371-9533",
+                            "617-371-9523",
+                            "617-371-9510",
+                            "617-371-9520",
+                            "617-371-9524",
+                            "(617) 371-9505",
+                            "617-371-9527",
+                            "617-371-9514",
+                            "617-371-9503",
+                            "617-371-9506",
+                            "617-371-9516"
+                        ],
+                        "address": " 619 Boston, MA 02108"
+                    }
+                }
+            },
+            "website_accessibility": {
+                "mobile_friendly": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "page_speed": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "performance": {
+                    "met_criteria": true,
+                    "info": null
+                },
+                "multi_lingual": {
+                    "met_criteria": true,
+                    "info": null
+                }
+            }
+        }
+    }
+]
