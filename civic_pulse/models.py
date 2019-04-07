@@ -4,7 +4,13 @@ from django.utils import timezone
 
 # Create your models here.
 class Agency(models.Model):
-    name = models.CharField(max_length=500)
+    id = models.IntegerField(primary_key=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    name = models.CharField(max_length=250)
+    website = models.CharField(max_length=100,blank=True)
+    twitter = models.CharField(max_length=100,blank=True)
+    facebook = models.CharField(max_length=100,blank=True)
+    phone_number = models.CharField(max_length=15,blank=True)
 
     def __str__(self):
         return self.name
