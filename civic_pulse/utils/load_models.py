@@ -42,6 +42,9 @@ def fill_entry_objects(filepath=os.path.join(os.path.dirname(__file__),
         data = json.load(file)
 
         for entry in data:
+            if not entry:
+                return
+
             profile = entry['profile']
             update_args = {
                 'https_enabled': profile['security_and_privacy']['https']['met_criteria'],
@@ -52,7 +55,6 @@ def fill_entry_objects(filepath=os.path.join(os.path.dirname(__file__),
                 'has_contact_info': profile['outreach_and_communication']['contact_access']['met_criteria'],
             }
             entry, created = Entry.objects.update_or_create(
-                id=entry['id'],
+                agency_id=entry['id'],
                 defaults=update_args
             )
-            print(entry)
