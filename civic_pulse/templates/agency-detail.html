@@ -10,5 +10,20 @@
     <ul>Phone Number: <a href="tel:{{ agency.phone_number }}">{{ agency.phone_number }}</a></ul>
     <ul>Facebook: <a href="{{ agency.facebook }}">{{ agency.facebook }}</a></ul>
     <ul>Twitter: <a href="{{ agency.twitter }}">{{ agency.twitter }}</a></ul>
+    <hr>
+    {% if last_entry %}
+        <ul>HTTPS Enabled: {{ last_entry.https_enabled }}</ul>
+        <ul>Has Privacy Policy: {{ last_entry.has_privacy_policy }}</ul>
+        <br>
+        <ul>Mobile Friendly: {{ last_entry.mobile_friendly}}</ul>
+        <ul>Good Performance: {{ last_entry.good_performance }}</ul>
+        <br>
+        <ul>Has Social Media: {{ last_entry.has_social_media}}</ul>
+        <ul>Has Contact Info: {{ last_entry.has_contact_info }}</ul>
+        <br>
+        <ul>Last Checked: {{ last_entry.created_date|timesince }} ago</ul>
+    {% else %}
+        <ul> Website has not been pulsed</ul>
+    {% endif %}
 </body>
 </html>
