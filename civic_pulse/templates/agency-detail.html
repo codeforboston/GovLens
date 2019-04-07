@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    {{ agency.name }}
+    <h4>{{ agency }}</h4>
+    <ul>Website: <a href="{{ agency.website }}">{{ agency.website }}</a></ul>
+    <ul>Phone Number: <a href="tel:{{ agency.phone_number }}">{{ agency.phone_number }}</a></ul>
+    <ul>Facebook: <a href="{{ agency.facebook }}">{{ agency.facebook }}</a></ul>
+    <ul>Twitter: <a href="{{ agency.twitter }}">{{ agency.twitter }}</a></ul>
 </body>
 </html>

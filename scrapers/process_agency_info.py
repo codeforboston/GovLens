@@ -1,8 +1,7 @@
-
-
-import json
 import requests, os, json
-from scrape_data import ScrapeSocialInfo
+from .scrape_data import ScrapeSocialInfo
+from .lighthouse import get_lighthouse_results
+
 
 class ProcessAgencyInfo:
 
@@ -11,7 +10,6 @@ class ProcessAgencyInfo:
         self.agency = agency
         self.url = agency['url']
         self.buckets = ["security_and_privacy","outreach_and_communication","website_accessibility"]
-
 
     def process_agency_info(self):
         try:
@@ -26,7 +24,7 @@ class ProcessAgencyInfo:
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = self.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    profile_info[bucket] = self.get_website_accessibility_info()
+                    profile_info[bucket] = self.get_website_accessibility_info(self.url)
 
                 agency_details = {
                      "id": self.agency['id'],
@@ -37,7 +35,7 @@ class ProcessAgencyInfo:
             
             return agency_details
         except Exception as ex:
-            print(f"An error occurred while processing the agency information: {str(ex)}")
+            print("An error occurred while processing the agency information: {str(ex)}")
     
 
     
@@ -47,11 +45,11 @@ class ProcessAgencyInfo:
             "privacy_policies": self.get_random_value("comprehensive")
         }
 
-    def get_website_accessibility_info(self):
+    def get_website_accessibility_info(self,url):
         return {
             "mobile_friendly": self.get_random_value("test"),
             "page_speed": self.get_random_value("page_speed"),
-            "performance": self.get_random_value("performance"),
+            "performance": self.get_site_performance(url),
             "multi_lingual": self.get_random_value("multi_lingual")
         }
     
@@ -80,6 +78,11 @@ class ProcessAgencyInfo:
     def get_random_value(self, url):
         return self.get_criteria_object(None, True)
 
+    def get_site_performance(self, url):
+        response = get_lighthouse_results(url,'performance')
+        score = response['lighthouseResult']['categories']['performance']['score']
+        is_criteria_met = True if score >= 80 else False
+        return self.get_criteria_object(score, is_criteria_met)
 
     def get_criteria_object(self, criteria, is_met):
         return {

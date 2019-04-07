@@ -1,4 +1,3 @@
-
 import requests
 import os, decimal, simplejson
 from bs4 import BeautifulSoup
@@ -30,7 +29,7 @@ class ScrapeSocialInfo:
                         elif any(link in tag["href"] for link in social_media_criteria):
                             social_media_links.append(tag["href"])
                 except Exception as ex:
-                    print(f"An error occurred while trying to extract the social media information: {str(ex)}")
+                    print("An error occurred while trying to extract the social media information: {str(ex)}")
             
             if contact_us_link:
                 if "http" in contact_us_link["href"]:
@@ -45,7 +44,7 @@ class ScrapeSocialInfo:
                 print("not making an extra call to get the contact info")
                 contact_info = self.get_contact_info(soup)
         except Exception as ex:
-            print(f"An error occurred while processing the social media information: {str(ex)}")
+            print("An error occurred while processing the social media information: {str(ex)}")
 
         return social_media_links, contact_info
         
@@ -80,5 +79,5 @@ class ScrapeSocialInfo:
                 }
             return all_contact_info
         except Exception as ex:
-            print(f"An error occurred while extracting the contact information for the firm {self.url}: {str(ex)}")
+            print("An error occurred while extracting the contact information for the firm {self.url}: {str(ex)}")
             return None
