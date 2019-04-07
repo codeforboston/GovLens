@@ -20,10 +20,6 @@ def fill_agency_objects(filepath=os.path.join(os.path.dirname(__file__),
 
         i = 0
         for row in reader:
-            # only run 100 to test behavior
-            if i >= 100:
-                return
-
             optional_args = {
                 'phone_number': row[PHONE_ROW] if row[PHONE_ROW] else row[BACKUP_PHONE_ROW],
                 'website': row[WEBSITE_ROW],

@@ -20,5 +20,15 @@ class Entry(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     agency = models.ForeignKey(Agency)
 
+    # Accessibility
+    mobile_friendly = models.BooleanField(default=False)
+
+    # Security
+    https_enabled = models.BooleanField(default=False)
+
+    # Outreach
+    has_social_media = models.BooleanField(default=False)
+
+
     def __str__(self):
         return self.agency.__str__() + "_" + self.created_date.strftime("%m_%d")

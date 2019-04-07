@@ -8,10 +8,10 @@ from .models import *
 class AgencyListView(generic.ListView):
     template_name = 'agency-list.html'
     context_object_name = 'agencies'
-    paginate_by = 10
+    paginate_by = 25
 
     def get_queryset(self):
-        return Agency.objects.order_by('-name')
+        return Agency.objects.order_by('name')
 
 
 class AgencyView(generic.DetailView):
