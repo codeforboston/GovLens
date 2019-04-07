@@ -3,7 +3,7 @@ from civic_pulse.models import Agency
 
 
 def fill_agency_objects(filepath=os.path.join(os.path.dirname(__file__),
-                                                       "../../data/agencies.csv")):
+                                              "../../data/../data/agencies.csv")):
     with open(filepath) as file:
         reader = csv.reader(file)
         next(reader, None)  # skip the headers
