@@ -80,11 +80,7 @@ class ProcessAgencyInfo:
 
     def get_site_performance(self, url):
         response = get_lighthouse_results(url,'performance')
-        try:
-            score = response['lighthouseResult']['categories']['performance']['score']
-        except KeyError as ex:
-            return print("An error occurred retrieving site performance from Page Insights API")
-
+        score = response['lighthouseResult']['categories']['performance']['score']
         is_criteria_met = True if score >= 80 else False
         return self.get_criteria_object(score, is_criteria_met)
 
