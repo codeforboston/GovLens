@@ -18,7 +18,7 @@ from django.contrib import admin
 from civic_pulse.views import *
 
 urlpatterns = [
-    url(r'^admin/$', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
     url(r'^$', AgencyListView.as_view(), name='index'),
     url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail')
 ]
