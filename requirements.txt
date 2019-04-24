@@ -9,3 +9,4 @@ requests==2.21.0
 simplejson==3.16.0
 sqlparse==0.3.0
 urllib3==1.24.1
+Pillow==6.0.0
