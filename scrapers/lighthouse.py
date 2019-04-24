@@ -1,7 +1,7 @@
 import requests, json
+from django.conf import settings
 
-# TODO move hardcoded API key to environment variable
-GOOGLE_API_KEY = "AIzaSyC25WRU_Vgdu0YF4_ePhg1WHVg5AQUCpRE"
+GOOGLE_API_KEY = settings.GOOGLE_API_KEY
 PAGE_INSIGHTS_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
 MOBILE_FRIENDLY_ENDPOINT = "https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run"
 
