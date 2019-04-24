@@ -1,14 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Civic Pulse agencies</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
+    <h1>Civic pulse</h1>
+    <p>Click on an agency below to explore</p>
     {% if agencies %}
-        <ul>
+        <ul class="agency-list">
         {% for agency in agencies %}
-            <li><a href="{% url 'agency-detail' agency.id %}">{{ agency.name }}</a></li>
+        <a href="{% url 'agency-detail' agency.id %}"><li>{{ agency.name }}</li></a>
         {% endfor %}
         </ul>
     {% else %}
