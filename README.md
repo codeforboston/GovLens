@@ -8,13 +8,21 @@ Clone the repository:
 git clone git@github.com:codeforboston/civicpulse.git
 ```
 
-Navigate to the base directory of the reposistory and prepare to install depedencies:
+Navigate to the base directory of the reposistory and prepare to install depedencies.
+
+To start, it is recommend to create a
+[virtual environment](https://virtualenv.pypa.io/en/stable/userguide/). If you have not
+used `virtualenv` before, install it with: `pip install virtualenv`.
 
 ```bash
 # Create a virtual environment to manage dependencies
 virtualenv venv
 source venv/bin/activate
+```
 
+Now install the dependencies with pip:
+
+```bash
 # Install requirements.txt
 pip install -r requirements.txt
 ```
