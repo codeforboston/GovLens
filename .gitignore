@@ -12,6 +12,7 @@ __pycache__/
 __pycache__
 db.sqlite3
 media
+.DS_Store
 
 # Backup files #
 *.bak
