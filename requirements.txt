@@ -3,7 +3,7 @@ certifi==2019.3.9
 chardet==3.0.4
 Django==2.2
 idna==2.8
-Pillow=6.0.0
+Pillow==6.0.0
 pytz==2018.9
 requests==2.21.0
 simplejson==3.16.0
