@@ -33,9 +33,14 @@ def get_lighthouse_results(url,category):
 # TODO get this to work
 def check_mobile_friendly(url):
     data = {
-        'url': url,
-        'key': GOOGLE_API_KEY,
+        'url': url
     }
-    response = requests.get(MOBILE_FRIENDLY_ENDPOINT,
-                            params=data)
+    params = {
+        'key': GOOGLE_API_KEY
+    } 
+    response = requests.post(MOBILE_FRIENDLY_ENDPOINT,
+                            params=params, data=data)
     return json.loads(response.content.decode('utf-8'))
+
+
+# print(check_mobile_friendly('http://www.mass.gov/cgly/'))
