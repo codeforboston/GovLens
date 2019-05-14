@@ -106,3 +106,6 @@ venv.bak/
 
 # sftp configuration file
 sftp-config.json
+
+.vscode
+/db.sqlite3

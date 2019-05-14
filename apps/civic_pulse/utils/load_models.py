@@ -1,5 +1,5 @@
 import csv, os, json
-from civic_pulse.models import Agency, Entry
+from ..models import Agency, Entry
 
 ID_ROW = 1
 NAME_ROW = 2
@@ -35,8 +35,7 @@ def fill_agency_objects(filepath=os.path.join(os.path.dirname(__file__),
             print(agency)
 
 
-def fill_entry_objects(filepath=os.path.join(os.path.dirname(__file__),
-                                              "../../scrapers/sample_data.json")):
+def fill_entry_objects(filepath=os.path.join("scrapers/sample_data.json")):
 
     with open(filepath) as file:
         data = json.load(file)

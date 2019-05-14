@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from civic_pulse.views import *
+from apps.civic_pulse.views import *
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
