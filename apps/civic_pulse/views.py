@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import *
+from .models import Agency
 
 
 class AgencyListView(generic.ListView):
@@ -20,4 +20,3 @@ class AgencyView(generic.DetailView):
         agency = context['object']
         context['last_entry'] = agency.entry_set.last()
         return context
-
