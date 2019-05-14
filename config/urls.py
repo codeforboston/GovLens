@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from rest_framework import routers
 
-from civic_pulse.api.viewsets import *
-from civic_pulse.views import *
+from apps.civic_pulse.api.viewsets import *
+from apps.civic_pulse.views import *
 
 router = routers.DefaultRouter()
 router.register(r'entries', EntryViewSet)

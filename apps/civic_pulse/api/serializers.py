@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from civic_pulse.models import Agency, Entry
+from apps.civic_pulse.models import Agency, Entry
 
 
 class AgencySerializer(serializers.ModelSerializer):

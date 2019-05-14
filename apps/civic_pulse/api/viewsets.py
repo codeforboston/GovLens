@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from civic_pulse.api.serializers import AgencySerializer,EntrySerializer
-from civic_pulse.models import Agency, Entry
+from apps.civic_pulse.api.serializers import AgencySerializer,EntrySerializer
+from apps.civic_pulse.models import Agency, Entry
 
 
 class AgencyViewSet(viewsets.ModelViewSet):
