@@ -25,7 +25,7 @@ router.register(r'agencies', AgencyViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
     url(r'^$', AgencyListView.as_view(), name='index'),
     url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
-    url(r'^api/', include(router.urls)),
 ]
