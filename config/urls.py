@@ -13,12 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework import routers
+from apps.civic_pulse.api.viewsets import *
 from apps.civic_pulse.views import *
 
+router = routers.DefaultRouter()
+router.register(r'entries', EntryViewSet)
+router.register(r'agencies', AgencyViewSet)
+
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
     url(r'^$', AgencyListView.as_view(), name='index'),
-    url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail')
+    url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
 ]
