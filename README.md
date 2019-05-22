@@ -59,6 +59,23 @@ python manage.py shell
 >>> exit()
 ```
 
+create user for the scraper.
+
+This step is needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet. 
+Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints. To create a token:
+- create an admin user to be able to login to the admin portal of the website: <site-name>/admin
+
+```bash
+  python manage.py createsuperuser --username admin --email admin@admin.com
+  
+  # enter the password when prompted. It can be any password that you wish to use. 
+  # It is used for login to the admin website.
+ ```
+- login to the admin website and create a user for the scraper.
+- create a token for the scraper user using the following command
+```bash
+./manage.py drf_create_token <username>
+```
 Finally, the database is ready to go! We are now ready to run the server:
 
 ```bash
