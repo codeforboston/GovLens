@@ -13,6 +13,16 @@ Civic Pulse is a project from [MuckRock](https://www.muckrock.com) and [Code for
 - [ ] Ask a current member to be added to our Github organization ([They'll need to click here](https://github.com/codeforboston/civicpulse/settings/collaboration)). After they've sent you an invite, you'll need to either check your email or notifications in Github (the alarm icon on the top right of your Github page) to accept the invite.
 - [ ] If you're interested in working on the backend of the site, [try following the instructions](#installation-instructions)
 
+## Project goals
+
+The goal is to create an automatically updated database that tracks, over time, how well government agencies websites at the state, local, and federal levels follow best practices when it comes to HTTPS security, mobile friendliness, reader accessibility, and other key areas.
+
+Over time, we hope to show whether both individual agencies are improving or worsening, as well as help highlight national shifts along the metrics we monitor. Individual pages show the most recent snapshot ranking, but our API will make historical data available.
+
+## Current status
+
+The project is currently in testing stages, as we work to both develop usable, accurate data and build a pipeline for regularly populating it. The site currently can run locally, but several of the data categories are filled with randomized testing data and any report cards generated are for **demonstration purposes only**. These scores do not represent actual scores for agencies.
+
 ## Installation instructions
 
 Clone the repository:
