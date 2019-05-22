@@ -4,7 +4,7 @@
 
 Civic Pulse is a project from [MuckRock](https://www.muckrock.com) and [Code for Boston](https://www.codeforboston.org). We scan thousands of government websites to check how well they stack up on security, accessibility, and public accountability.
 
-![](README_images/scorecard.png )
+![A screenshot of what a Civic Scorecard looks like](README_images/scorecard.png )
 
 ## Installation instructions
 
