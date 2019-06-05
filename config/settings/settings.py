@@ -25,7 +25,7 @@ SECRET_KEY = '=wc@ng&5%_1)sbj&&wuq8$oy5a#1k%^3qqkam@x%9*6k57t30)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','civicpulse-env.4bvxnwhus8.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
