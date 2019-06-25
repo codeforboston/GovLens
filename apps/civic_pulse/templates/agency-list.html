@@ -1,14 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Civic Pulse agencies</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-</head>
-<body>
-    <h1>Civic pulse</h1>
-    <p>Click on an agency below to explore</p>
+{% block css %}
+
+{% endblock css %}
+{% block content %}
+<div style="padding-top: 8rem;">
     {% if agencies %}
         <ul class="agency-list">
         {% for agency in agencies %}
@@ -40,5 +36,5 @@
         {% endif %}
       </ul>
     {% endif %}
-</body>
-</html>
+</div>
+{% endblock content %}
