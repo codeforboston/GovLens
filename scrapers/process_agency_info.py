@@ -1,6 +1,7 @@
 import requests, os, json
-from .scrape_data import ScrapeSocialInfo
-from .lighthouse import get_lighthouse_results
+from scrape_social_info import ScrapeSocialInfo
+# from lighthouse import get_lighthouse_results
+from agency_dataaccessor import AgencyDataAccessor
 
 
 class ProcessAgencyInfo:
@@ -8,34 +9,41 @@ class ProcessAgencyInfo:
     def __init__(self, agency):
         self.agency_firms = []
         self.agency = agency
-        self.url = agency['url']
+        self.website = agency['website']
         self.buckets = ["security_and_privacy","outreach_and_communication","website_accessibility"]
 
     def process_agency_info(self):
         try:
-            
-            page = requests.get(self.url, timeout=30)
-            scrape_social_info = ScrapeSocialInfo(page, self.url)
+            agency_url = self.agency.get('website',None)
+            if agency_url is None or agency_url == '':
+                print(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
+                return
+            print(f"Scraping the website {agency_url}")
+            page = requests.get(agency_url, timeout=30)
+            scrape_social_info = ScrapeSocialInfo(page, self.website)
             social_media_info, contact_info = scrape_social_info.scrape_info()
             profile_info = {}
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
-                    profile_info[bucket] = self.get_security_privacy_info(self.url)
+                    profile_info[bucket] = self.get_security_privacy_info(self.website)
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = self.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    profile_info[bucket] = self.get_website_accessibility_info(self.url)
+                    # profile_info[bucket] = self.get_website_accessibility_info(self.website)
+                    profile_info[bucket] = {}
 
-                agency_details = {
-                     "id": self.agency['id'],
-                     "name": self.agency['name'],
-                     "url": self.url,
-                     "profile": profile_info
+            agency_details = {
+                "id": self.agency['id'],
+                "name": self.agency['name'],
+                "Website": self.website,
+                "profile": profile_info
                 }
             
+            data_accessor = AgencyDataAccessor(None, self.agency)
+            data_accessor.update_scrape_info(agency_details)
             return agency_details
         except Exception as ex:
-            print("An error occurred while processing the agency information: {str(ex)}")
+            print(f"An error occurred while processing the agency information: {str(ex)}")
     
 
     
@@ -79,10 +87,11 @@ class ProcessAgencyInfo:
         return self.get_criteria_object(None, True)
 
     def get_site_performance(self, url):
-        response = get_lighthouse_results(url,'performance')
-        score = response['lighthouseResult']['categories']['performance']['score']
-        is_criteria_met = True if score >= 80 else False
-        return self.get_criteria_object(score, is_criteria_met)
+        print("hello world")
+        # response = get_lighthouse_results(url,'performance')
+        # score = response['lighthouseResult']['categories']['performance']['score']
+        # is_criteria_met = True if score >= 80 else False
+        # return self.get_criteria_object(score, is_criteria_met)
 
     def get_criteria_object(self, criteria, is_met):
         return {
