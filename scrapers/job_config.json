@@ -1,0 +1,7 @@
+{
+    "day_of_job": "tue",
+    "hour": "20",
+    "minute": "18",
+    "interval_between_runs_seconds": 60,
+    "agency_batch_size": 4
+}
