@@ -103,26 +103,35 @@ class ProcessAgencyInfo:
         return self.get_criteria_object(None, True)
 
     def get_site_performance(self, url):
-        response = get_lighthouse_results(url,'performance')
-        score = response['lighthouseResult']['categories']['performance']['score']
-        is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
-        return self.get_criteria_object(score, is_criteria_met)
+        try:
+            response = get_lighthouse_results(url,'performance')
+            score = response['lighthouseResult']['categories']['performance']['score']
+            is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
+            return self.get_criteria_object(score, is_criteria_met)
+        except:
+            print("Error in get_site_performance for", url)
 
     def get_mobile_friendliness(self, url):
-        response = get_lighthouse_results(url,'pwa')
-        score = response['lighthouseResult']['audits']['content-width']['score']#If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens.
-        title = response['lighthouseResult']['audits']['content-width']['title']
-        is_criteria_met = True if title == 'Content is sized correctly for the viewport' else False
-        return self.get_criteria_object(score, is_criteria_met)
+        try:
+            response = get_lighthouse_results(url,'pwa')
+            score = response['lighthouseResult']['audits']['content-width']['score']#If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens.
+            title = response['lighthouseResult']['audits']['content-width']['title']
+            is_criteria_met = True if title == 'Content is sized correctly for the viewport' else False
+            return self.get_criteria_object(score, is_criteria_met)
+        except:
+            print("Error in get_mobile_friendliness for", url)
 
     def get_page_speed(self, url):
-        response = get_lighthouse_results(url,'performance')
-        score = response['lighthouseResult']['audits']['speed-index']['score'] 
-        """ note: several page speed metrics can be obbtained and are slightly different. Example
-        response['lighthouseResult']['audits']['speed-index']['displayValue'] contains the time in seconds and not a score
-        speed-index in response['lighthouseResult']['categories']['performance']['auditRefs'] """
-        is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
-        return self.get_criteria_object(score, is_criteria_met)
+        try:
+            response = get_lighthouse_results(url,'performance')
+            score = response['lighthouseResult']['audits']['speed-index']['score'] 
+            """ note: several page speed metrics can be obbtained and are slightly different. Example
+            response['lighthouseResult']['audits']['speed-index']['displayValue'] contains the time in seconds and not a score
+            speed-index in response['lighthouseResult']['categories']['performance']['auditRefs'] """
+            is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
+            return self.get_criteria_object(score, is_criteria_met)
+        except:
+            print("Error in get_page_speed for", url)
 
     def get_criteria_object(self, criteria, is_met):
         return {
