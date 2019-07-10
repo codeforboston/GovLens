@@ -1,0 +1,31 @@
+# File structure version
+version: '2'
+
+services:
+    # Web server based on official nginx image
+    # Connect external 8080 (which you can access from browser)
+    # with internal port 80 (which will be linked to app port 8000 in configs)
+    # Connect local nginx configuration with image configuration
+  nginx:
+    container_name: nginx
+    image: nginx
+    hostname: nginx
+    ports:
+      - "80:80"
+    mem_limit: 120m
+    volumes:
+      - /var/app/current/civicpulse/deploy/nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+
+  app:
+    container_name: django_server
+    image: muckrock/muckrock:1.0
+    command: ["sh", "/usr/src/app/deploy/container_start1.sh"]
+    stdin_open: true
+    tty: true
+    mem_limit: 120m
+    volumes:
+        - /var/app/current/civicpulse:/usr/src/app
+    expose:
+      - "8000"
