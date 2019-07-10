@@ -1,6 +1,6 @@
 import requests, os, json
 from scrape_social_info import ScrapeSocialInfo
-# from lighthouse import get_lighthouse_results
+from lighthouse import get_lighthouse_results
 from agency_dataaccessor import AgencyDataAccessor
 
 
@@ -25,40 +25,40 @@ class ProcessAgencyInfo:
             profile_info = {}
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
-                    profile_info[bucket] = self.get_security_privacy_info(self.website)
+                    profile_info[bucket] = self.get_security_privacy_info(self.website, page)
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = self.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    # profile_info[bucket] = self.get_website_accessibility_info(self.website)
-                    profile_info[bucket] = {}
-
-            agency_details = {
-                "id": self.agency['id'],
-                "name": self.agency['name'],
-                "Website": self.website,
-                "profile": profile_info
+                    profile_info[bucket] = self.get_website_accessibility_info(self.website, page)
+    
+                agency_details = {
+                     "id": self.agency['id'],
+                     "name": self.agency['name'],
+                     "Website": self.website,
+                     "profile": profile_info
                 }
             
             data_accessor = AgencyDataAccessor(None, self.agency)
             data_accessor.update_scrape_info(agency_details)
             return agency_details
         except Exception as ex:
-            print(f"An error occurred while processing the agency information: {str(ex)}")
+            print(f"An error occurred in process_agency_info : {str(ex)}")
     
 
     
-    def get_security_privacy_info(self, url):
+    def get_security_privacy_info(self, url, page):
         return {
-            "https": self.get_http_acess(url),
-            "privacy_policies": self.get_random_value("comprehensive")
+            "https": self.get_http_acess(self.website),
+            "hsts": self.get_hsts(page),
+            "privacy_policies": self.get_privacy_policies(page)
         }
 
-    def get_website_accessibility_info(self,url):
+    def get_website_accessibility_info(self,url,page):
         return {
-            "mobile_friendly": self.get_random_value("test"),
-            "page_speed": self.get_random_value("page_speed"),
+            "mobile_friendly": self.get_mobile_friendliness(url), #use either lighthouse or https://www.google.com/webmasters/tools/mobile-friendly/?url=<website_addr>
+            "page_speed": self.get_page_speed(url),
             "performance": self.get_site_performance(url),
-            "multi_lingual": self.get_random_value("multi_lingual")
+            "multi_lingual": self.get_multi_lingual(page)
         }
     
     def get_outreach_communication_info(self, social_media_info, contact_info):
@@ -82,16 +82,47 @@ class ProcessAgencyInfo:
     
     def get_http_acess(self, url):
         return self.get_criteria_object(None, "https" in url)
+        # OR with lighthouse         response = get_lighthouse_results(url,'pwa')
+        #score = response['lighthouseResult']['audits']['content-width']['score']
+    
+    def get_hsts(self, page):
+        #return self.get_criteria_object(None, "strict-transport-security" in requests.get(self.url, timeout = 30))
+        is_criteria_met = True if "strict-transport-security" in page.headers else False 
+        return self.get_criteria_object(None, is_criteria_met)
+    
+    def get_privacy_policies(self, page):
+        is_criteria_met = True if "privacy policy" in page.text.lower() else False
+        return self.get_criteria_object(None, is_criteria_met)
+
+    def get_multi_lingual(self, page):
+        is_criteria_met = True if (("translate" or "select language" or "select-language" in page.text.lower()) 
+        or ("espanol" or "Espa&ntilde;ol") in page.a) else False
+        return self.get_criteria_object(None, is_criteria_met)
 
     def get_random_value(self, url):
         return self.get_criteria_object(None, True)
 
     def get_site_performance(self, url):
-        print("hello world")
-        # response = get_lighthouse_results(url,'performance')
-        # score = response['lighthouseResult']['categories']['performance']['score']
-        # is_criteria_met = True if score >= 80 else False
-        # return self.get_criteria_object(score, is_criteria_met)
+        response = get_lighthouse_results(url,'performance')
+        score = response['lighthouseResult']['categories']['performance']['score']
+        is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
+        return self.get_criteria_object(score, is_criteria_met)
+
+    def get_mobile_friendliness(self, url):
+        response = get_lighthouse_results(url,'pwa')
+        score = response['lighthouseResult']['audits']['content-width']['score']#If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens.
+        title = response['lighthouseResult']['audits']['content-width']['title']
+        is_criteria_met = True if title == 'Content is sized correctly for the viewport' else False
+        return self.get_criteria_object(score, is_criteria_met)
+
+    def get_page_speed(self, url):
+        response = get_lighthouse_results(url,'performance')
+        score = response['lighthouseResult']['audits']['speed-index']['score'] 
+        """ note: several page speed metrics can be obbtained and are slightly different. Example
+        response['lighthouseResult']['audits']['speed-index']['displayValue'] contains the time in seconds and not a score
+        speed-index in response['lighthouseResult']['categories']['performance']['auditRefs'] """
+        is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
+        return self.get_criteria_object(score, is_criteria_met)
 
     def get_criteria_object(self, criteria, is_met):
         return {
