@@ -30,7 +30,7 @@ def fill_agency_objects(filepath=os.path.join(os.path.dirname(__file__),
             agency  = {
                 'id': row[ID_ROW],
                 'name': row[NAME_ROW],
-                'url': row[WEBSITE_ROW]
+                'website': row[WEBSITE_ROW]
             }
             agency_instance = ProcessAgencyInfo(agency)
             agency_details = agency_instance.process_agency_info()

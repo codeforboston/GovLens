@@ -81,15 +81,25 @@ class ProcessAgencyInfo:
         return self.get_criteria_object(social_media_info, is_criteria_met)
     
     def get_http_acess(self, url):
-        return self.get_criteria_object(None, "https" in url)
-        # OR with lighthouse         response = get_lighthouse_results(url,'pwa')
-        #score = response['lighthouseResult']['audits']['content-width']['score']
-    
+        #return self.get_criteria_object(None, "https" in url)
+        try: 
+            response = get_lighthouse_results(self.website,'pwa')
+            score = response['lighthouseResult']['audits']['is-on-https']['score']  
+            is_criteria_met = True if score == 1 else False 
+            return self.get_criteria_object(score, is_criteria_met)      
+        except:
+            print("Error in get_http_acess for", self.website)
+
     def get_hsts(self, page):
         #return self.get_criteria_object(None, "strict-transport-security" in requests.get(self.url, timeout = 30))
-        is_criteria_met = True if "strict-transport-security" in page.headers else False 
-        return self.get_criteria_object(None, is_criteria_met)
-    
+        try: 
+            response = get_lighthouse_results(self.website,'pwa')
+            score = response['lighthouseResult']['audits']['redirects-http']['score']  
+            is_criteria_met = True if score == 1 else False 
+            return self.get_criteria_object(score, is_criteria_met)      
+        except:
+            print("Error in get_hsts for", self.website)
+
     def get_privacy_policies(self, page):
         is_criteria_met = True if "privacy policy" in page.text.lower() else False
         return self.get_criteria_object(None, is_criteria_met)
