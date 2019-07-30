@@ -1,17 +1,17 @@
 import requests, json
 from django.conf import settings
 
-GOOGLE_API_KEY = settings.GOOGLE_API_KEY
+#GOOGLE_API_KEY = settings.GOOGLE_API_KEY 
 PAGE_INSIGHTS_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
-MOBILE_FRIENDLY_ENDPOINT = "https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run"
+MOBILE_FRIENDLY_ENDPOINT = "https://search.google.com/test/mobile-friendly" # from what i have tested, very hard to automate
 
 '''
 Lighthouse has 5 categories of information that can be pulled from a url
 - performance
 - accessibility
 - best_practices
-- pwa
-- seo
+- pwa proressive web app : relatively fast, mobile friendly, secure origin some best practices 
+- seo search engine optimization 
 
 The score for each category is in the JSON results as..
 {
@@ -24,7 +24,7 @@ The score for each category is in the JSON results as..
 }
 '''
 def get_lighthouse_results(url,category):
-    data = {'url': url, 'key': GOOGLE_API_KEY, 'category': category}
+    data = {'url': url, 'category': category}#,'key': GOOGLE_API_KEY}
     response = requests.get(PAGE_INSIGHTS_ENDPOINT,
                             params=data)
     return json.loads(response.content.decode('utf-8'))
@@ -42,5 +42,3 @@ def check_mobile_friendly(url):
                             params=params, data=data)
     return json.loads(response.content.decode('utf-8'))
 
-
-# print(check_mobile_friendly('http://www.mass.gov/cgly/'))
