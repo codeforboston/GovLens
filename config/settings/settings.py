@@ -21,6 +21,7 @@ BASE_DIR = os.path.normpath(
                os.path.dirname(
                  os.path.abspath(__file__)), "..", ".."))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -30,7 +31,9 @@ SECRET_KEY = '=wc@ng&5%_1)sbj&&wuq8$oy5a#1k%^3qqkam@x%9*6k57t30)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','app']
+ALLOWED_HOSTS = ['app', 'localhost', '0.0.0.0', '127.0.0.1','civicpulse-env.4bvxnwhus8.us-east-1.elasticbeanstalk.com']
+
+STATIC_ROOT = os.path.join(BASE_DIR, '/apps/civic_pulse/static/')
 
 
 # Database
@@ -154,8 +157,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-print(PROJECT_ROOT)
-print(STATIC_URL)
+STATIC_ROOT = os.path.join(BASE_DIR, 'apps/static')
 
 GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY', '')
