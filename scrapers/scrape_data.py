@@ -8,7 +8,9 @@ def scrape_data(agencies):
     if len(agencies) <= 0:
         print("No Agency information was passed to scrape")
         return
-
+    
+    import pdb; pdb.set_trace()
     for agency in agencies:
         agency_instance = ProcessAgencyInfo(agency)
-        agency_instance.process_agency_info()
+        return agency_instance.process_agency_info()
+        

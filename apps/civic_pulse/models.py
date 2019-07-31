@@ -36,6 +36,7 @@ class Entry(models.Model):
 
     # Security/Privacy
     https_enabled = models.BooleanField(default=False)
+    hsts_enabled = models.BooleanField(default=False)
     has_privacy_policy = models.BooleanField(default=False)
 
     # A11y
