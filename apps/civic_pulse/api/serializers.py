@@ -11,4 +11,4 @@ class AgencySerializer(serializers.ModelSerializer):
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry
-        fields = ['agency','https_enabled','has_privacy_policy','mobile_friendly','good_performance','has_social_media','has_contact_info']
+        fields = ['id','agency','https_enabled','has_privacy_policy','mobile_friendly','good_performance','has_social_media','has_contact_info']

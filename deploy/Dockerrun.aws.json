@@ -1,0 +1,57 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [
+    {
+      "name": "app-vol",
+      "host": {
+        "sourcePath": "/var/app/current"
+      }
+    },
+    {
+      "name": "nginx-proxy-conf",
+      "host": {
+        "sourcePath": "/var/app/current/civicpulse/deploy/nginx/"
+      }
+    }
+    ],
+    "containerDefinitions": [
+        {
+            "command": [
+                "/bin/sh",
+		"-c",
+	        "chmod +x /usr/src/app/civicpulse/deploy/container_start.sh && /usr/src/app/civicpulse/deploy/container_start.sh"
+            ],
+            "essential": true,
+            "image": "muckrock/muckrock:1.0",
+            "memory": 120,
+            "mountPoints": [
+                {
+                    "containerPath": "/usr/src/app",
+                    "sourceVolume": "app-vol"
+                }
+            ],
+            "name": "app"
+        },
+        {
+            "essential": true,
+            "image": "nginx",
+            "memory": 120,
+	    "links": [
+        	"app"
+	    ],
+            "mountPoints": [
+                {
+                    "containerPath": "/etc/nginx/conf.d",
+                    "sourceVolume": "nginx-proxy-conf"
+                }
+            ],
+            "name": "nginx",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ]
+        }
+    ]
+}
