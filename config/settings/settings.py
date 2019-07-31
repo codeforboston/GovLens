@@ -33,9 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['app', 'localhost', '0.0.0.0', '127.0.0.1','civicpulse-env.4bvxnwhus8.us-east-1.elasticbeanstalk.com']
 
-STATIC_ROOT = os.path.join(BASE_DIR, '/apps/civic_pulse/static/')
-
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
