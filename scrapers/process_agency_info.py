@@ -1,10 +1,15 @@
 import requests, os, json
+<<<<<<< HEAD
 from scrape_social_info import ScrapeSocialInfo
 from lighthouse import get_lighthouse_results
+=======
+from scrapers.social_scraper import SocialScraper
+from scrapers.security_scraper import SecurityScraper
+from scrapers.accessibility_scraper import AccessibilityScraper
+>>>>>>> 27c64bb8c4c0b3b661f16c6c8830b77d771a46bc
 from agency_dataaccessor import AgencyDataAccessor
 
-
-class ProcessAgencyInfo:
+class AgencyInfo:
 
     def __init__(self, agency):
         self.agency_firms = []
@@ -14,21 +19,34 @@ class ProcessAgencyInfo:
 
     def process_agency_info(self):
         try:
+            # HTTP Get on agency url
             agency_url = self.agency.get('website',None)
             if agency_url is None or agency_url == '':
                 print(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
                 return
             print(f"Scraping the website {agency_url}")
+
             page = requests.get(agency_url, timeout=30)
-            scrape_social_info = ScrapeSocialInfo(page, self.website)
-            social_media_info, contact_info = scrape_social_info.scrape_info()
+
+            # Initialize scrapers
+            socialScraper = SocialScraper(page, agency_url)
+            securityScraper = SecurityScraper(page, agency_url)
+            accessibilityScraper = AccessibilityScraper(page, agency_url)
+
+            social_media_info, contact_info = socialScraper.scrape_info()
             profile_info = {}
+
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
+<<<<<<< HEAD
                     profile_info[bucket] = self.get_security_privacy_info(self.website, page)
+=======
+                    profile_info[bucket] = securityScraper.get_security_privacy_info(self.website)
+>>>>>>> 27c64bb8c4c0b3b661f16c6c8830b77d771a46bc
                 elif bucket == "outreach_and_communication":
-                    profile_info[bucket] = self.get_outreach_communication_info(social_media_info, contact_info)
+                    profile_info[bucket] = socialScraper.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
+<<<<<<< HEAD
                     profile_info[bucket] = self.get_website_accessibility_info(self.website, page)
     
                 agency_details = {
@@ -36,12 +54,23 @@ class ProcessAgencyInfo:
                      "name": self.agency['name'],
                      "Website": self.website,
                      "profile": profile_info
+=======
+                    profile_info[bucket] = accessibilityScraper.get_website_accessibility_info(self.website)
+
+
+            agency_details = {
+                "id": self.agency['id'],
+                "name": self.agency['name'],
+                "Website": self.website,
+                "profile": profile_info
+>>>>>>> 27c64bb8c4c0b3b661f16c6c8830b77d771a46bc
                 }
-            
+
             data_accessor = AgencyDataAccessor(None, self.agency)
             data_accessor.update_scrape_info(agency_details)
             return agency_details
         except Exception as ex:
+<<<<<<< HEAD
             print(f"An error occurred in process_agency_info : {str(ex)}")
     
 
@@ -148,7 +177,8 @@ class ProcessAgencyInfo:
              "met_criteria" : is_met,
              "info": criteria
          }
+=======
+            print(f"An error occurred while processing the agency information: {str(ex)}")
+>>>>>>> 27c64bb8c4c0b3b661f16c6c8830b77d771a46bc
 
 
-# agency_info = ProcessAgencyInfo()
-# agency_info.process_agency_info()

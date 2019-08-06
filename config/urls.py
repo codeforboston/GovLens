@@ -18,6 +18,7 @@ from django.contrib import admin
 from rest_framework import routers
 from apps.civic_pulse.api.viewsets import *
 from apps.civic_pulse.views import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 router = routers.DefaultRouter()
 router.register(r'entries', EntryViewSet)
@@ -29,3 +30,5 @@ urlpatterns = [
     url(r'^$', AgencyListView.as_view(), name='index'),
     url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
