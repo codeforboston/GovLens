@@ -1,7 +1,7 @@
 import csv, os
 import json
 
-from process_agency_info import ProcessAgencyInfo
+from process_agency_info import AgencyInfo
 
 ID_ROW = 1
 NAME_ROW = 2
@@ -32,7 +32,7 @@ def fill_agency_objects(filepath=os.path.join(os.path.dirname(__file__),
                 'name': row[NAME_ROW],
                 'url': row[WEBSITE_ROW]
             }
-            agency_instance = ProcessAgencyInfo(agency)
+            agency_instance = AgencyInfo(agency)
             agency_details = agency_instance.process_agency_info()
             all_agency_info.append(agency_details)
             i+=1
