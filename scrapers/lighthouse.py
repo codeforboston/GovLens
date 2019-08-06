@@ -1,46 +1,29 @@
+import os
 import requests, json
 from django.conf import settings
+from scrapers.base_api_client import ApiClient
 
-GOOGLE_API_KEY = settings.GOOGLE_API_KEY
+GOOGLE_API_KEY = "AIzaSyCJOEyfcXBfnLt3dpaUAD78Pp8XfIbGSx0" #os.environ['GOOGLE_API_KEY']
 PAGE_INSIGHTS_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
 MOBILE_FRIENDLY_ENDPOINT = "https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run"
 
-'''
-Lighthouse has 5 categories of information that can be pulled from a url
-- performance
-- accessibility
-- best_practices
-- pwa
-- seo
+class GoogleMobileFriendlyClient(ApiClient):
+    def __init__(self, api_uri=MOBILE_FRIENDLY_ENDPOINT, api_key=GOOGLE_API_KEY):
+        ApiClient.__init__(self, api_uri, api_key)
 
-The score for each category is in the JSON results as..
-{
-  'lighthouseResult': {
-        'categories': {
-            '<category name>': {
-                'score': Int
-            }
+    def get_mobile_friendly(self, url):
+        data = {
+                'url': url
         }
-}
-'''
-def get_lighthouse_results(url,category):
-    data = {'url': url, 'key': GOOGLE_API_KEY, 'category': category}
-    response = requests.get(PAGE_INSIGHTS_ENDPOINT,
-                            params=data)
-    return json.loads(response.content.decode('utf-8'))
+        params = {
+                'key': self.api_key
+        }
+        return self.post("", data=data, params=params)
 
+if __name__=="__main__":
+    google_client = ApiClient(MOBILE_FRIENDLY_ENDPOINT, GOOGLE_API_KEY)
+    data = {'url':"https://stackoverflow.com/questions/24022558/differences-between-staticfiles-dir-static-root-and-media-root"}
+    params = {'key':google_client.api_key}
 
-# TODO get this to work
-def check_mobile_friendly(url):
-    data = {
-        'url': url
-    }
-    params = {
-        'key': GOOGLE_API_KEY
-    } 
-    response = requests.post(MOBILE_FRIENDLY_ENDPOINT,
-                            params=params, data=data)
-    return json.loads(response.content.decode('utf-8'))
-
-
-# print(check_mobile_friendly('http://www.mass.gov/cgly/'))
+    response = google_client.post("", data=data, params=params)
+    print("CHECKED")
