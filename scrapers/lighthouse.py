@@ -3,7 +3,7 @@ import requests, json
 from django.conf import settings
 from scrapers.base_api_client import ApiClient
 
-GOOGLE_API_KEY = "AIzaSyCJOEyfcXBfnLt3dpaUAD78Pp8XfIbGSx0" #os.environ['GOOGLE_API_KEY']
+GOOGLE_API_KEY = "" #os.environ['GOOGLE_API_KEY']
 PAGE_INSIGHTS_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
 MOBILE_FRIENDLY_ENDPOINT = "https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run"
 
