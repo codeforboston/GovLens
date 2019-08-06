@@ -7,7 +7,6 @@ from lighthouse import GoogleMobileFriendlyClient
 class AccessibilityScraper(BaseScraper):
 
     def __init__(self, raw_page_content, url):
-        self.bucket = []
         self.raw_page_content = raw_page_content
         self.url = url
         self.apiClient = GoogleMobileFriendlyClient()

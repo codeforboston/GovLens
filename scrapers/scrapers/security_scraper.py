@@ -5,7 +5,6 @@ from agency_dataaccessor import AgencyDataAccessor
 class SecurityScraper(BaseScraper):
 
     def __init__(self, raw_page_content, url):
-        self.bucket = []
         self.raw_page_content = raw_page_content
         self.url = url
 
