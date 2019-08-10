@@ -3,6 +3,7 @@ from scrapers.social_scraper import SocialScraper
 from scrapers.security_scraper import SecurityScraper
 from scrapers.accessibility_scraper import AccessibilityScraper
 from agency_dataaccessor import AgencyDataAccessor
+from lighthouse import get_lighthouse_results
 
 class AgencyInfo:
 
@@ -22,22 +23,23 @@ class AgencyInfo:
             print(f"Scraping the website {agency_url}")
 
             page = requests.get(agency_url, timeout=30)
-
+            lighthouse_pwa = get_lighthouse_results(agency_url, 'pwa')
+            lighthouse_performance = get_lighthouse_results(agency_url,'performance')
             # Initialize scrapers
             socialScraper = SocialScraper(page, agency_url)
-            securityScraper = SecurityScraper(page, agency_url)
-            accessibilityScraper = AccessibilityScraper(page, agency_url)
+            securityScraper = SecurityScraper(page, agency_url, lighthouse_pwa, page)
+            accessibilityScraper = AccessibilityScraper(page, agency_url, lighthouse_performance, lighthouse_pwa,page)
 
             social_media_info, contact_info = socialScraper.scrape_info()
             profile_info = {}
 
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
-                    profile_info[bucket] = securityScraper.get_security_privacy_info(self.website)
+                    profile_info[bucket] = securityScraper.get_security_privacy_info()
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = socialScraper.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    profile_info[bucket] = accessibilityScraper.get_website_accessibility_info(self.website)
+                    profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
 
 
             agency_details = {
