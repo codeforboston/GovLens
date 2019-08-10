@@ -2,67 +2,52 @@ import requests, os, json
 from .base_scraper import BaseScraper
 from agency_dataaccessor import AgencyDataAccessor
 from .base_api_client import ApiClient
-from lighthouse import lighthouse_scraper
+from lighthouse import PageInsightsClient
 
 class AccessibilityScraper(BaseScraper):
 
-    def __init__(self, raw_page_content, url, lighthouse_performance, lighthouse_pwa, page):
+    def __init__(self, raw_page_content, url):
         self.page = raw_page_content
         self.url = url
-        #self.apiClient = lighthouse_scraper()
-        self.lighthouse_performance = lighthouse_performance
-        self.lighthouse_pwa = lighthouse_pwa
-        self.page = page
+        self.apiClient = PageInsightsClient()
 
     def get_website_accessibility_info(self):
+        insights = self.apiClient.get_page_insights(self.url)
+        lighthouse_results = insights['lighthouseResult']
         return {
-            "mobile_friendly": AccessibilityScraper.get_mobile_friendliness(self), #use either lighthouse or https://www.google.com/webmasters/tools/mobile-friendly/?url=<website_addr>
-            "page_speed": AccessibilityScraper.get_page_speed(self),
-            "performance": AccessibilityScraper.get_site_performance(self),
-            "multi_lingual": AccessibilityScraper.get_multi_lingual(self)
+            "mobile_friendly": self.get_mobile_friendliness(lighthouse_results),
+            "page_speed": self.get_page_speed(lighthouse_results),
+            "performance": self.get_site_performance(lighthouse_results),
+            "multi_lingual": self.get_multi_lingual()
         }
 
     def get_multi_lingual(self):
-        is_criteria_met = True if (("translate" or "select language" or "select-language" in self.page.text.lower()) 
+        is_criteria_met = True if (("translate" or "select language" or "select-language" in self.page.text.lower())
         or ("espanol" or "Espa&ntilde;ol") in self.page.a) else False
         return self.get_criteria_object(None, is_criteria_met)
-    
-    def get_site_performance(self):
+
+    def get_site_performance(self, lighthouse_results):
         try:
-            #response = get_lighthouse_results(url,'performance')
-            score = self.lighthouse_performance['lighthouseResult']['categories']['performance']['score']
-            is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
-            return self.get_criteria_object(score, is_criteria_met)
+            performanceResults = lighthouse_results['categories']['performance']['score']
+            is_criteria_met = True if performanceResults*100 >= 80 else False # the score in the Json file is a percentage
+            return self.get_criteria_object(performanceResults, is_criteria_met)
         except:
             print("Error in get_site_performance for", self.url)
 
-    def get_mobile_friendliness(self):
+    def get_mobile_friendliness(self, lighthouse_results):
         try:
-            #response = get_lighthouse_results(url,'pwa')
-            score = self.lighthouse_pwa['lighthouseResult']['audits']['content-width']['score']#If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens.
-            title = self.lighthouse_pwa['lighthouseResult']['audits']['content-width']['title']
+            #If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens.
+            score = lighthouse_results['audits']['content-width']['score']
+            title = lighthouse_results['audits']['content-width']['title']
             is_criteria_met = True if title == 'Content is sized correctly for the viewport' else False
             return self.get_criteria_object(score, is_criteria_met)
         except:
-            print("Error in get_mobile_friendliness for", self.url)       
-        """response = self.apiClient.get_mobile_friendly(url)
-        isMobileFriendly = False
+            print("Error in get_mobile_friendliness for", self.url)
 
-        if(response.ok()):
-            isMobileFriendly = True if response.content['mobileFriendliness'] == 'MOBILE_FRIENDLY' else False
-            if(not isMobileFriendly):
-                #TODO: return issues as well if site is not mobile friendly
-                mobileFriendlyIssues = response.content['mobileFriendlyIssues']
-        return isMobileFriendly"""
-
-    def get_page_speed(self):
+    def get_page_speed(self, lighthouse_results):
         try:
-            #response = get_lighthouse_results(url,'performance')
-            score = self.lighthouse_performance['lighthouseResult']['audits']['speed-index']['score'] 
-            """ note: several page speed metrics can be obbtained and are slightly different. Example
-            response['lighthouseResult']['audits']['speed-index']['displayValue'] contains the time in seconds and not a score
-            speed-index in response['lighthouseResult']['categories']['performance']['auditRefs'] """
-            is_criteria_met = True if score*100 >= 80 else False # the score in the Json file is a percentage
-            return self.get_criteria_object(score, is_criteria_met)
+            speed_index = lighthouse_results['audits']['speed-index']['score']
+            is_criteria_met = True if speed_index*100 >= 80 else False # the score in the Json file is a percentage
+            return self.get_criteria_object(speed_index, is_criteria_met)
         except:
             print("Error in get_page_speed for", self.url)
