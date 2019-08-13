@@ -3,7 +3,6 @@ from scrapers.social_scraper import SocialScraper
 from scrapers.security_scraper import SecurityScraper
 from scrapers.accessibility_scraper import AccessibilityScraper
 from agency_dataaccessor import AgencyDataAccessor
-from lighthouse import get_lighthouse_results
 
 class AgencyInfo:
 
@@ -23,12 +22,10 @@ class AgencyInfo:
             print(f"Scraping the website {agency_url}")
 
             page = requests.get(agency_url, timeout=30)
-            lighthouse_pwa = get_lighthouse_results(agency_url, 'pwa')
-            lighthouse_performance = get_lighthouse_results(agency_url,'performance')
             # Initialize scrapers
             socialScraper = SocialScraper(page, agency_url)
-            securityScraper = SecurityScraper(page, agency_url, lighthouse_pwa, page)
-            accessibilityScraper = AccessibilityScraper(page, agency_url, lighthouse_performance, lighthouse_pwa,page)
+            securityScraper = SecurityScraper(page, agency_url)
+            accessibilityScraper = AccessibilityScraper(page, agency_url)
 
             social_media_info, contact_info = socialScraper.scrape_info()
             profile_info = {}

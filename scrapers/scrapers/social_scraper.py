@@ -94,8 +94,6 @@ class SocialScraper(BaseScraper):
         is_contact_info_available = False
         if contact_info and contact_info["phone_number"] or contact_info["email"] or contact_info["address"]:
             is_contact_info_available = True
-        else:
-            is_contact_info_available = False
         return self.get_criteria_object(contact_info, is_contact_info_available)
 
     def get_socialmedia_access(self, social_media_info):
