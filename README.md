@@ -1,10 +1,10 @@
-# Civic Pulse
+# GovLens
 
 ## About the project
 
-Civic Pulse is a project from [MuckRock](https://www.muckrock.com) and [Code for Boston](https://www.codeforboston.org). We scan thousands of government websites to check how well they stack up on security, accessibility, and public accountability. [You can join us every Tuesday night to help out](https://www.meetup.com/Code-for-Boston).
+GovLens (formerly informally Civic Pulse) is a project from [MuckRock](https://www.muckrock.com) and [Code for Boston](https://www.codeforboston.org). We scan thousands of government websites to check how well they stack up on security, accessibility, and public accountability. [You can join us every Tuesday night to help out](https://www.meetup.com/Code-for-Boston).
 
-![A screenshot of what a Civic Scorecard looks like](README_images/scorecard.png )
+![A screenshot of what a GovLens Scorecard looks like](README_images/scorecard.png )
 
 ## Getting started basics
 
