@@ -28,7 +28,7 @@ This site has three core planned audiences:
 
 - [ ] Make sure [you've registered for the Code for Boston Slack](https://communityinviter.com/apps/cfb-public/code-for-boston-slack-invite).
 - [ ] Join the #MuckRock channel on Slack.
-- [ ] Ask a current member to be added to our Github organization ([They'll need to click here](https://github.com/codeforboston/civicpulse/settings/collaboration)). After they've sent you an invite, you'll need to either check your email or notifications in Github (the alarm icon on the top right of your Github page) to accept the invite.
+- [ ] Ask a current member to be added to our Github organization ([They'll need to click here](https://github.com/codeforboston/GovLens/settings/collaboration)). After they've sent you an invite, you'll need to either check your email or notifications in Github (the alarm icon on the top right of your Github page) to accept the invite.
 - [ ] If you're interested in working on the backend of the site, [try following the instructions](#installation-instructions)
 
 ## Project goals
@@ -46,7 +46,7 @@ The project is currently in testing stages, as we work to both develop usable, a
 Clone the repository:
 
 ```bash
-git clone git@github.com:codeforboston/civicpulse.git
+git clone git@github.com:codeforboston/govlens.git
 ```
 
 Navigate to the base directory of the reposistory and prepare to install depedencies.
