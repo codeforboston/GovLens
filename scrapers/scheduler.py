@@ -20,7 +20,7 @@ class Scheduler:
 
     def __init__(self):
         self.queue_size = 0
-        self.job_execution_counter = 0   
+        self.job_execution_counter = 0
     
     def read_settings(self):
         data = {}
