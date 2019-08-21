@@ -14,7 +14,6 @@ from scrape_data import scrape_data
  reset_schedule_parameters() - resets queue_size to 0 and job_queue to None to end when scraping all agencies with a time stamp converted to a string
  scrape_websites() - scrapes each website at a specific time('cron')
  '''
-
 class Scheduler:
 
     def __init__(self):
