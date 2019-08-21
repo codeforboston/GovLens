@@ -23,7 +23,7 @@ class Scheduler:
         self.job_execution_counter = 0   
     
     def read_settings(self):
-        data = {}   
+        data = {}
         with open(os.path.dirname(os.path.abspath(__file__))+"/job_config.json", 'r') as f:
             data = json.load(f)
         self.agency_list_size = data['agency_batch_size']
