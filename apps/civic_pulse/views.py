@@ -8,7 +8,7 @@ class AgencyListView(generic.ListView):
     paginate_by = 25
 
     def get_queryset(self):
-        return Agency.objects.order_by('created_date')
+        return Agency.objects.order_by('name')
 
 
 class AgencyView(generic.DetailView):
