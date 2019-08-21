@@ -9,20 +9,22 @@ class AgencyListView(ListView):
     ordering = 'name'
     paginate_by = 25
 
+    @property
+    def search_term(self):
+        return self.request.GET.get('q')
+
     def get_queryset(self):
         qs = super(AgencyListView,self).get_queryset()
-        self.search_term = self.request.GET.get('q','')
         if self.search_term:
             qs = qs.filter(name__icontains=self.search_term)
         return qs
 
 
-class AgencyView(DetailView):
+class AgencyDetailView(DetailView):
     model = Agency
     template_name = 'agencies/agency_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(AgencyView, self).get_context_data(**kwargs)
-        agency = context['object']
-        context['last_entry'] = agency.entry_set.last()
+        context = super(AgencyDetailView, self).get_context_data(**kwargs)
+        context['last_entry'] = self.object.entry_set.last()
         return context

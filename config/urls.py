@@ -1,4 +1,4 @@
-"""govlens_app URL Configuration
+"""civic_pulse_app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -25,10 +25,10 @@ router.register(r'entries', EntryViewSet)
 router.register(r'agencies', AgencyViewSet)
 
 urlpatterns = [
+    url(r'^$', AgencyListView.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
-    url(r'^$', AgencyListView.as_view(), name='index'),
-    url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
+    url(r'^agencies/',include(('apps.agencies.urls','agencies'),namespace='agencies')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
