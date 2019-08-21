@@ -6,11 +6,11 @@
 {% block content %}
 <div style="padding-top: 8rem;">
     {% if agencies %}
+        <ul class="agency-list">
         <form action="" method="get">
             <input type="text" name="q" value="{{ view.search_term }}">
-            <input type="submit">
+            <input type="submit" value="Search">
         </form>
-        <ul class="agency-list">
         {% for agency in agencies %}
         <a href="{% url 'agency-detail' agency.id %}"><li>{{ agency.name }}</li></a>
         {% endfor %}

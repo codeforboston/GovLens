@@ -154,6 +154,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'apps/static')
+STATICFILES_DIRS = [
+    'apps/static',
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY', '')
