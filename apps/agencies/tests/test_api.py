@@ -3,7 +3,7 @@ from django.test import TestCase
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient
 from django.contrib.auth.models import User
-from apps.civic_pulse.models import Agency,Entry
+from apps.agencies.models import Agency,Entry
 
 
 class AgencyAPITest(TestCase):

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0005_add_agency_fields'),
+        ('agencies', '0005_add_agency_fields'),
     ]
 
     operations = [

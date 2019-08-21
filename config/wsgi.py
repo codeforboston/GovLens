@@ -1,5 +1,5 @@
 """
-WSGI config for civic_pulse_app project.
+WSGI config for govlens_app project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

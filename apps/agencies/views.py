@@ -3,7 +3,6 @@ from .models import Agency
 
 
 class AgencyListView(generic.ListView):
-    template_name = 'agency-list.html'
     context_object_name = 'agencies'
     paginate_by = 25
 
@@ -13,7 +12,6 @@ class AgencyListView(generic.ListView):
 
 class AgencyView(generic.DetailView):
     model = Agency
-    template_name = 'agency-detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(AgencyView, self).get_context_data(**kwargs)

@@ -9,7 +9,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0002_increase_name_length'),
+        ('agencies', '0002_increase_name_length'),
     ]
 
     operations = [

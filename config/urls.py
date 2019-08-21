@@ -1,4 +1,4 @@
-"""civic_pulse_app URL Configuration
+"""govlens_app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from apps.civic_pulse.api.viewsets import *
-from apps.civic_pulse.views import *
+from apps.agencies.api.viewsets import *
+from apps.agencies.views import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 router = routers.DefaultRouter()

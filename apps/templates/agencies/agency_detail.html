@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% load static %}
 
 {% block content %}
@@ -64,7 +64,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-sm-4">
-                {% include 'check_box.html' with has_feature=last_entry.https_enabled %}
+                {% include 'agencies/check_box.html' with has_feature=last_entry.https_enabled %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Uses HTTPS</h4><br>
@@ -72,7 +72,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=True %}
+              {% include 'agencies/check_box.html' with has_feature=True %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>No third party trackers</h4><br>
@@ -80,7 +80,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=last_entry.has_privacy_policy %}
+              {% include 'agencies/check_box.html' with has_feature=last_entry.has_privacy_policy %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Has a privacy policy</h4><br>
@@ -97,7 +97,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=last_entry.mobile_friendly %}
+              {% include 'agencies/check_box.html' with has_feature=last_entry.mobile_friendly %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Is mobile friendly</h4><br>
@@ -105,7 +105,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=True %}
+              {% include 'agencies/check_box.html' with has_feature=True %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Passes Google's accessibility test</h4><br>
@@ -113,7 +113,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=last_entry.good_performance %}
+              {% include 'agencies/check_box.html' with has_feature=last_entry.good_performance %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Passes Google's speed test</h4><br>
@@ -130,7 +130,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=last_entry.has_social_media %}
+              {% include 'agencies/check_box.html' with has_feature=last_entry.has_social_media %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Uses social media</h4><br>
@@ -138,7 +138,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=last_entry.has_contact_info %}
+              {% include 'agencies/check_box.html' with has_feature=last_entry.has_contact_info %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Multiple ways to contact</h4><br>
@@ -146,7 +146,7 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              {% include 'check_box.html' with has_feature=True %}
+              {% include 'agencies/check_box.html' with has_feature=True %}
             </div>
             <div class="col-sm-8 text-left">
               <h4>Posts meetings and minutes</h4><br>

@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0001_initial'),
+        ('agencies', '0001_initial'),
     ]
 
     operations = [

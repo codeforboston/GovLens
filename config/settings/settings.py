@@ -64,7 +64,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-    'apps.civic_pulse',
+    'apps.agencies',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -90,7 +90,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../../templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'apps/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

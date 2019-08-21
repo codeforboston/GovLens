@@ -82,7 +82,7 @@ running a Django shell:
 python manage.py shell
 
 # From within the shell
->>> from apps.civic_pulse.utils.load_models import *
+>>> from apps.agencies.utils.load_models import *
 >>> fill_agency_objects()
 >>> exit()
 ```
