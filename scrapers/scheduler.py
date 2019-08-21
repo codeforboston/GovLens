@@ -13,8 +13,7 @@ from scrape_data import scrape_data
  scrape_scheduled_method() - schedule method to call scrapers for each agency(from the agencies list) with a timestamp converted to a string
  reset_schedule_parameters() - resets queue_size to 0 and job_queue to None to end when scraping all agencies with a time stamp converted to a string
  scrape_websites() - scrapes each website at a specific time('cron')
-
-   '''
+ '''
 
 class Scheduler:
 
