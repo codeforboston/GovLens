@@ -1,13 +1,15 @@
 from django.views import generic
 from .models import Agency
+from .viewmixins import SearchMixin
 
 
-class AgencyListView(generic.ListView):
+class AgencyListView(SearchMixin,generic.ListView):
+    model = Agency
     context_object_name = 'agencies'
     paginate_by = 25
+    search_fields = ['name']
+    ordering = 'name'
 
-    def get_queryset(self):
-        return Agency.objects.order_by('name')
 
 
 class AgencyView(generic.DetailView):
