@@ -7,14 +7,23 @@ from agency_api_service import AgencyApiService
 from scrape_data import scrape_data
 
 
+''' In this module we create a class Sheduler with methods:
+ read_settings() - reads job_config.json - parameters for each agency
+ scheduled_method() - gets all agencies(AgencyApiService()) and stores them into a list
+ scrape_scheduled_method() - schedule method to call scrapers for each agency(from the agencies list) with a timestamp converted to a string
+ reset_schedule_parameters() - resets queue_size to 0 and job_queue to None to end when scraping all agencies with a time stamp converted to a string
+ scrape_websites() - scrapes each website at a specific time('cron')
+
+   '''
+
 class Scheduler:
 
     def __init__(self):
         self.queue_size = 0
-        self.job_execution_counter = 0
+        self.job_execution_counter = 0   
     
     def read_settings(self):
-        data = {}
+        data = {}   
         with open(os.path.dirname(os.path.abspath(__file__))+"/job_config.json", 'r') as f:
             data = json.load(f)
         self.agency_list_size = data['agency_batch_size']
@@ -67,8 +76,8 @@ class Scheduler:
             self.job_queue.put(agencies[i:i + self.agency_list_size])
 
 
-scheduler_instance = Scheduler()
-scheduler_instance.read_settings()
-scheduler_instance.scrape_websites()
+scheduler_instance = Scheduler()   #Creates a Scheduler instance 
+scheduler_instance.read_settings()  #Reads settings for each new istance from job_config.json 
+scheduler_instance.scrape_websites() #Scrapes websites for each new object 
 
 
