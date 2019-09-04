@@ -2,7 +2,7 @@
 
 ## About the project
 
-GovLens (formerly informally Civic Pulse) is a project from [MuckRock](https://www.muckrock.com) and [Code for Boston](https://www.codeforboston.org). We scan thousands of government websites to check how well they stack up on security, accessibility, and public accountability. [You can join us every Tuesday night to help out](https://www.meetup.com/Code-for-Boston).
+GovLens is a government transparency project developed by MuckRock and Code for Boston engineers. Our mission is to create a more open, accessible, and secure democracy through examining the technical elements of government agency websites. We use algorithms to score thousands of federal and state agencies based on their transparency, security, privacy, and accessibility. We then publish our findings and help communicate to government agencies possible improvements to their infrastructures that would better the agency as a whole. 
 
 ![A screenshot of what a GovLens Scorecard looks like](README_images/scorecard.png )
 
