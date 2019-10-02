@@ -1,7 +1,6 @@
 from django.views import generic
 
 from .models import Agency
-from .forms import AgencyForm
 
 class AgencyListView(generic.ListView):
     template_name = 'agency-list.html'
