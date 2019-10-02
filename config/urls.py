@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
 from rest_framework import routers
 from apps.civic_pulse.api.viewsets import *
@@ -29,6 +30,8 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^$', AgencyListView.as_view(), name='index'),
     url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
+    path('search/', AgencyResults.as_view(), name='search_results'),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()
