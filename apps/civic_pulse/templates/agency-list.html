@@ -6,9 +6,14 @@
 {% block content %}
 
 <div style="padding-top: 8rem;">
-<form action="{% url 'search_results' %}" method="get">
-  <input name="q" type="text" placeholder="Search...">
+<div class="input-group" style="padding-inline-start:50px">
+<form action="{% url 'search-results' %}" method="get">
+<div class="form-group" style="width:50%">
+    <input type="text" name ="name" class="form-control" id="agencyQuery" placeholder="Search...">
+</div>
+<button type="submit" class="btn btn-primary" style="background-color:#e83f10;border:none;margin-left:10px">Search</button>
 </form>
+</div>
     {% if agencies %}
         <ul class="agency-list">
         {% for agency in agencies %}
@@ -22,7 +27,7 @@
     {% if is_paginated %}
       <ul class="pagination">
         {% if page_obj.has_previous %}
-          <li><a href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&laquo;</a></li>
+          <li><a href="?page={{ page_obj.previous_page_number }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">&laquo;</a></li>
         {% else %}
           <li class="disabled"><span>&laquo;</span></li>
         {% endif %}
@@ -30,11 +35,11 @@
           {% if page_obj.number == i %}
             <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
           {% else %}
-            <li><a href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a></li>
+            <li><a href="?page={{ i }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">{{ i }}</a></li>
           {% endif %}
         {% endfor %}
         {% if page_obj.has_next %}
-          <li><a href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&raquo;</a></li>
+          <li><a href="?page={{ page_obj.next_page_number }}{% if request.GET.name %}&name={{ request.GET.name }}{% endif %}">&raquo;</a></li>
         {% else %}
           <li class="disabled"><span>&raquo;</span></li>
         {% endif %}

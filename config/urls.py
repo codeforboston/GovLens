@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^$', AgencyListView.as_view(), name='index'),
     url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
-    path('search/', AgencyResults.as_view(), name='search_results'),
+    path('search/', AgencyResultsView.as_view(), name='search-results'),
 
 ]
 
