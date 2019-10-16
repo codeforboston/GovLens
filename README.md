@@ -55,6 +55,8 @@ To start, it is recommend to create a
 [virtual environment](https://virtualenv.pypa.io/en/stable/userguide/). If you have not
 used `virtualenv` before, install it with: `pip install virtualenv`.
 
+For mac users: if you are having issues with `virtualenv` try running `brew postinstall python3`.
+
 ```bash
 # Create a virtual environment to manage dependencies
 virtualenv venv
