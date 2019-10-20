@@ -1,7 +1,7 @@
 import csv, os
 import json
 
-from process_agency_info import ProcessAgencyInfo
+from process_agency_info import AgencyInfo
 
 # The Scheduler will invoke this function. Parameter is list of agencies for which the data needs to be scraped
 def scrape_data(agencies):
@@ -10,5 +10,5 @@ def scrape_data(agencies):
         return
 
     for agency in agencies:
-        agency_instance = ProcessAgencyInfo(agency)
+        agency_instance = AgencyInfo(agency)
         agency_instance.process_agency_info()
