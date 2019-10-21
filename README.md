@@ -55,7 +55,7 @@ To start, it is recommend to create a
 [virtual environment](https://virtualenv.pypa.io/en/stable/userguide/). If you have not
 used `virtualenv` before, install it with: `pip install virtualenv`.
 
-For mac users: if you are having issues with `virtualenv` try running `brew postinstall python3`.
+For mac users: if you had to upgrade to python3 using brew and you are getting an error like `-bash: virtualenv: command not found`, try running `brew postinstall python3`.
 
 ```bash
 # Create a virtual environment to manage dependencies
