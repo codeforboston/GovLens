@@ -104,10 +104,10 @@ running a Django shell:
 ```bash
 python manage.py shell
 
-# From within the shell
->>> from apps.civic_pulse.utils.load_models import *
->>> fill_agency_objects()
->>> exit()
+# From within the >>> shell
+from apps.civic_pulse.utils.load_models import *
+fill_agency_objects()
+exit()
 ```
 
 create user for the scraper. (Note that "scraper" is a bit of a misnomer, we are mostly simply calling the [Lighthouse](https://developers.google.com/web/tools/lighthouse) Api.)
