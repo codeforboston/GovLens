@@ -110,7 +110,7 @@ python manage.py shell
 >>> exit()
 ```
 
-create user for the scraper. (Note that "scraper" is a bit of a misnomer, we are mostly simply calling the Lighthouse Api.)
+create user for the scraper. (Note that "scraper" is a bit of a misnomer, we are mostly simply calling the [Lighthouse](https://developers.google.com/web/tools/lighthouse) Api.)
 
 This step is needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet. 
 Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints. To create a token:
