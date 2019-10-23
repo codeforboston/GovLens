@@ -43,21 +43,44 @@ The project is currently in testing stages, as we work to both develop usable, a
 
 ## Installation instructions
 
-Clone the repository:
+Install python3 if you haven't installed it yet. To check:
+```bash
+python --version
+python3 --version
+```
+
+If it isn't installed, see [Python](https://www.python.org/downloads/) or google it for your operating system.
+
+Create a developer account on Github if you don't have one: [Github](https://github.com/)
+
+Fork the repository on Github, see: [Fork a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+
+Clone your forked repository from the command line (this will create a GovLens directory):
 
 ```bash
-git clone git@github.com:codeforboston/govlens.git
+git clone https://github.com/--your-github-name--/GovLens.git
 ```
 
 Navigate to the base directory of the reposistory and prepare to install depedencies.
+```bash
+cd GovLens
+```
 
 To start, it is recommend to create a
 [virtual environment](https://virtualenv.pypa.io/en/stable/userguide/). If you have not
-used `virtualenv` before, install it with: `pip install virtualenv`.
-
+used `virtualenv` before, install it with:
 ```bash
 # Create a virtual environment to manage dependencies
+pip install virtualenv
+# or
+pip3 install virtualenv
+# if python 2 is your default python
+#
+# Next,create a virtual environment to manage dependencies
 virtualenv venv
+# or
+virtualenv -p python3 venv
+# if python 2 is your default python
 source venv/bin/activate
 ```
 
@@ -87,7 +110,7 @@ python manage.py shell
 >>> exit()
 ```
 
-create user for the scraper.
+create user for the scraper. (Note that "scraper" is a bit of a misnomer, we are mostly simply calling the Lighthouse Api.)
 
 This step is needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet. 
 Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints. To create a token:
