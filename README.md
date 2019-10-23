@@ -125,7 +125,7 @@ Note: The scrapers live in an independent environment not neccessarily in the sa
 - login to the admin website and create a user for the scraper.
 - create a token for the scraper user using the following command
 ```bash
-./manage.py drf_create_token <username>
+./manage.py drf_create_token admin
 ```
 Finally, the database is ready to go! We are now ready to run the server:
 
