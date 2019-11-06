@@ -102,3 +102,8 @@ sftp-config.json
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# virtualenv
+bin/
+include/
+share/
