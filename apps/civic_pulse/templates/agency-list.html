@@ -4,13 +4,56 @@
 
 {% endblock css %}
 {% block content %}
+
+<!--<div style="font-size: 20em; color: black">Blam</div>
+<form action="">
+  <div class="input-group mb-4">
+    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon5" class="form-control">
+    <div class="input-group-append">
+      <button id="button-addon5" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+  <div class="input-group mb-4">
+    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon6" class="form-control">
+    <div class="input-group-append">
+      <button id="button-addon6" type="submit" class="btn btn-info"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+  <div class="input-group mb-4">
+    <div class="input-group-prepend">
+      <button id="button-addon7" type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+    </div>
+    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon7" class="form-control">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <button id="button-addon8" type="submit" class="btn btn-danger"><i class="fa fa-search"></i></button>
+    </div>
+    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon8" class="form-control">
+  </div>
+</form>-->
 <div style="padding-top: 8rem;">
     {% if agencies %}
-        <ul class="agency-list">
-        {% for agency in agencies %}
-        <a href="{% url 'agency-detail' agency.id %}"><li>{{ agency.name }}</li></a>
+        <!--<ul class="agency-list">-->
+            <div class="row">
+
+                <!--<div class="card-deck">-->
+                    {% for agency in agencies %}
+            <div class="card our-card">
+          <!--<img src="..." class="card-img-top" alt="...">-->
+          <div class="card-body">
+            <h5 class="card-title">{{ agency.name }}</h5>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer">
+              <a href="{% url 'agency-detail' agency.id %}" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <!--<a href="{% url 'agency-detail' agency.id %}"><li>{{ agency.name }}</li></a>-->
         {% endfor %}
-        </ul>
+      <!--</div>-->
+    </div>
+        <!--</ul>-->
     {% else %}
         <p>No agencies available.</p>
     {% endif %}
@@ -37,4 +80,5 @@
       </ul>
     {% endif %}
 </div>
+
 {% endblock content %}

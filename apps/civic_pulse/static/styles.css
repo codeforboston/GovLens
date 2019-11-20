@@ -1,8 +1,25 @@
+.primary-color {
+  color: #2E2757;
+}
+
+.primary-background {
+  background-color: #2E2757;
+}
+
+.secondary-color {
+  color: #0F8EC5;
+}
+
+.secondary-background {
+  background-color: #0F8EC5;
+}
+
 body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
   color: #818181;
 }
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -17,6 +34,14 @@ h4 {
   font-weight: 400;
   margin-bottom: 30px;
 }
+
+.tagline {
+  padding-top: 3vh;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
 .jumbotron {
   background-color: #ff0000;
   background-image: url('images/map_boston.png');
@@ -112,9 +137,22 @@ h4 {
   background-color: #f4511e;
   color: #fff;
 }
+
+/* total height minus navbar */
+.homebody {
+  height: calc(100vh - 120px);
+  background: url('images/civicSquare.png') no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  
+}
+
 .navbar {
+  height: 120px;
   margin-bottom: 0;
-  background-color: #e60000;
+  /*background-color: #e60000; */
   z-index: 9999;
   border: 0;
   font-size: 12px !important;
@@ -230,4 +268,50 @@ body {
 .agency-list li:hover {
   transform: scale(1.1);
   background: #f9f9f9;
+}
+
+.fadein {
+  animation: fadein 2s;
+  opacity: 1;
+}
+
+@keyframes fadein {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.svg {
+  height: 35%;
+  margin: 0 auto;
+}
+
+.donut {
+  stroke: #c4c4c4;
+  stroke-width: 6;
+  animation: donut2 3s;
+  stroke-dasharray: 80, 20;
+  filter:url(#shadow);
+}
+
+@keyframes donut2 {
+  0% {
+      stroke-dasharray: 0, 100;
+  }
+  100% {
+      stroke-dasharray: 80, 20;
+  }
+}
+
+.our-card {
+  background-color: rgba(255,255,255,0.8);
+}
+
+.card-header {
+  color: #2E2757;
+  font-size: 1.4em;
+  font-style: bold;
 }
