@@ -3,7 +3,6 @@ import asyncio, aiofiles, aiohttp
 import requests, json
 from django.conf import settings
 from scrapers.base_api_client import ApiClient
-from agency_api_service import AgencyApiService
 
 
 GOOGLE_API_KEY = ""  #os.environ['GOOGLE_API_KEY']

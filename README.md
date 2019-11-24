@@ -2,7 +2,7 @@
 
 ## About the project
 
-GovLens (formerly informally Civic Pulse) is a project from [MuckRock](https://www.muckrock.com) and [Code for Boston](https://www.codeforboston.org). We scan thousands of government websites to check how well they stack up on security, accessibility, and public accountability. [You can join us every Tuesday night to help out](https://www.meetup.com/Code-for-Boston).
+GovLens is a government transparency project developed by MuckRock and Code for Boston engineers. Our mission is to create a more open, accessible, and secure democracy through examining the technical elements of government agency websites. We use algorithms to score thousands of federal and state agencies based on their transparency, security, privacy, and accessibility. We then publish our findings and help communicate to government agencies possible improvements to their infrastructures that would better the agency as a whole.
 
 ![A screenshot of what a GovLens Scorecard looks like](README_images/scorecard.png )
 
@@ -43,17 +43,27 @@ The project is currently in testing stages, as we work to both develop usable, a
 
 ## Installation instructions
 
-Clone the repository:
-
+Install python3 if you haven't installed it yet. 
 ```bash
-git clone git@github.com:codeforboston/govlens.git
+python3 --version
+```
+If you do not see a version you will need to visit [Python](https://www.python.org/downloads/) or google how to install it for your operating system.  You want python3 as well as pip3.
+
+
+Create a developer account on Github if you don't have one: [Github](https://github.com/)
+
+Fork the repository on Github, see: [Fork a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+
+Clone your forked repository from the command line (this will create a GovLens directory):
+```bash
+git clone https://github.com/--your-github-name--/GovLens.git
 ```
 
 Navigate to the base directory of the reposistory and prepare to install depedencies.
 
 To start, it is recommend to create a
 [virtual environment](https://virtualenv.pypa.io/en/stable/userguide/). If you have not
-used `virtualenv` before, install it with: `pip install virtualenv`.
+used `virtualenv` before, install it with: `pip3 install virtualenv`.
 
 ```bash
 # Create a virtual environment to manage dependencies
@@ -65,21 +75,21 @@ Now install the dependencies with pip:
 
 ```bash
 # Install requirements.txt
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 After the dependencies have installed, we want to prepare the database.
 
 ```bash
 # Perform data migrations
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 Then, we need to import a CSV file containing existing agency information. Start by
 running a Django shell:
 
 ```bash
-python manage.py shell
+python3 manage.py shell
 
 # From within the shell
 >>> from apps.civic_pulse.utils.load_models import *
@@ -87,28 +97,28 @@ python manage.py shell
 >>> exit()
 ```
 
-create user for the scraper.
+The following steps are needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet. 
+Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints. 
 
-This step is needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet. 
-Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints. To create a token:
 - create an admin user to be able to login to the admin portal of the website: <site-name>/admin
 
 ```bash
-  python manage.py createsuperuser --username admin --email admin@admin.com
+  python3 manage.py createsuperuser --username admin --email admin@admin.com
   
   # enter the password when prompted. It can be any password that you wish to use. 
   # It is used for login to the admin website.
  ```
-- login to the admin website and create a user for the scraper.
-- create a token for the scraper user using the following command
+- Start up the webserver so we can create a user for the scraper.
 ```bash
-./manage.py drf_create_token <username>
+python3 manage.py runserver
+```
+- Visit localhost:8000/admin and follow the UI to add a new user named "scraper", set the password to whatever you would like but make note of it.
+
+- In a new terminal tab, create a token for the scraper user using the following command
+```bash
+python3 manage.py drf_create_token scraper
 ```
 Finally, the database is ready to go! We are now ready to run the server:
-
-```bash
-python manage.py runserver
-```
 
 Navigate in your browser to `http://127.0.0.1:8000/` and you should see a list of
 agencies.
