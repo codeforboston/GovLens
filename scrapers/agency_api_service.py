@@ -1,9 +1,12 @@
-import requests
-from scrape_data import scrape_data
+import requests, os 
 
 class AgencyApiService:
     def __init__(self):
-        self.base_url = "http://127.0.0.1:8000/api/agencies"
+        # If environment variable is set, we use the corresponding api(usually local). otherwise govlens api
+        if os.environ.get('govlens_api', None)  is None:
+            self.base_url = "http://govlens.us-east-2.elasticbeanstalk.com/api/agencies/"
+        else:
+            self.base_url = os.environ['govlens_api']
 
     def get_all_agencies(self):
         try:
@@ -16,9 +19,4 @@ class AgencyApiService:
         response = requests.get(url,headers={'Content-type': 'application/json'})
         return response.json()
 
-if __name__=="__main__":
-    svc = AgencyApiService()
-    agens = svc.get_all_agencies()
-    scraped = scrape_data(agens)
-    print ("SCRAPED")
 

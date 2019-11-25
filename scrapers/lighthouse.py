@@ -1,7 +1,5 @@
 import os, time
-import asyncio, aiofiles, aiohttp
 import requests, json
-from django.conf import settings
 from scrapers.base_api_client import ApiClient
 
 
@@ -17,7 +15,7 @@ Lighthouse has 5 categories of information that can be pulled from a url
 - pwa proressive web app : relatively fast, mobile friendly, secure origin some best practices
 - seo search engine optimization '''
 
-
+ 
 class PageInsightsClient(ApiClient):
     def __init__(self, api_uri=PAGE_INSIGHTS_ENDPOINT, api_key=GOOGLE_API_KEY):
         ApiClient.__init__(self, api_uri, api_key)

@@ -59,6 +59,7 @@ class Response(object):
 			self.content = self.response.json()
 		except ValueError:
 			self.content = self.response.text
+			print(f"Error while getting the response: {str(ValueError)}")
 
 	def ok(self):
 		import requests

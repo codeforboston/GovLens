@@ -1,4 +1,4 @@
-import requests
+import requests, os
 from requests.auth import HTTPBasicAuth
 import json, datetime
 
@@ -6,11 +6,14 @@ import json, datetime
 class AgencyDataAccessor:
 
     def __init__(self, token, agency_info):
-        self.base_url = "http://127.0.0.1:8000/api/agencies/"
+        if os.environ.get('govlens_api', None)  is None:
+            self.base_url = "http://govlens.us-east-2.elasticbeanstalk.com/api/agencies/"
+        else:
+            self.base_url = os.environ['govlens_api']
         self.agency_info = agency_info
         if token is None:
-            self.token = "Token 0da08ca28219e9d154812a1e5b79d0405acbceeb"
-
+            self.token = "Django Api token"
+ 
     def update_scrape_info(self, scrape_info):
         try:
             outreach_and_communication = scrape_info['profile']['outreach_and_communication']
@@ -26,7 +29,7 @@ class AgencyDataAccessor:
                 self.agency_info['facebook'] = self.get_social_media_links(social_media_info, 'facebook')
                 self.agency_info['twitter'] = self.get_social_media_links(social_media_info, 'twitter')
             else:
-                print(f"social media informatioon not available for the agency {scrape_info['Website']}")
+                print(f"social media information not available for the agency {scrape_info['Website']}")
 
             self.agency_info['last_successful_scrape'] = datetime.datetime.now()
             agency_url = f"{self.base_url}{self.agency_info['id']}/"

@@ -1,4 +1,4 @@
-import requests, os, json
+import requests, os
 from scrapers.social_scraper import SocialScraper
 from scrapers.security_scraper import SecurityScraper
 from scrapers.accessibility_scraper import AccessibilityScraper
@@ -15,7 +15,7 @@ class AgencyInfo:
     def process_agency_info(self):
         try:
             # HTTP Get on agency url
-            agency_url = self.agency.get('website',None)
+            agency_url = self.agency.get('website',None) 
             if agency_url is None or agency_url == '':
                 print(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
                 return
@@ -30,13 +30,16 @@ class AgencyInfo:
             social_media_info, contact_info = socialScraper.scrape_info()
             profile_info = {}
 
+            # Figure out the google_api_key and then fix the below buckets 
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
-                    profile_info[bucket] = securityScraper.get_security_privacy_info()
+                    pass
+                    # profile_info[bucket] = securityScraper.get_security_privacy_info()
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = socialScraper.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
+                    pass
+                    # profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
 
 
             agency_details = {
