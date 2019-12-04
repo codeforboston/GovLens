@@ -25,6 +25,7 @@ class SecurityScraper(BaseScraper):
             return self.get_criteria_object(score, is_criteria_met)
         except Exception as ex:
             print(f"Error in get_http_access for {self.url}, exception: {str(ex)}")
+            logging.error(f"Error in get_http_access for {self.url}, exception: {str(ex)}")
 
     def get_hsts(self):
         try:
@@ -34,11 +35,13 @@ class SecurityScraper(BaseScraper):
             return self.get_criteria_object(score, is_criteria_met)
         except Exception as ex:
             print(f"Error in get_hsts for {self.url}, exception: {str(ex)}")
-
+            logging.error(f"Error in get_hsts for {self.url}, exception: {str(ex)}")
     def get_privacy_policies(self):
         try:
             is_criteria_met = True if "privacy policy" in self.page.text.lower() else False
             return self.get_criteria_object(None, is_criteria_met)
         except Exception as ex:
             print(f"Error in get_privacy_policies for {self.url}, exception: {str(ex)}")
+            logging.error(f"Error in get_privacy_policies for {self.url}, exception: {str(ex)}")
+
 

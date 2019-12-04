@@ -1,4 +1,5 @@
 import requests, os
+import logging
 from scrapers.social_scraper import SocialScraper
 from scrapers.security_scraper import SecurityScraper
 from scrapers.accessibility_scraper import AccessibilityScraper
@@ -15,9 +16,10 @@ class AgencyInfo:
     def process_agency_info(self):
         try:
             # HTTP Get on agency url
-            agency_url = self.agency.get('website',None) 
+            agency_url = self.agency.get('website',None)
             if agency_url is None or agency_url == '':
                 print(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
+                logging.error(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
                 return
             print(f"Scraping the website {agency_url}")
 
@@ -30,7 +32,7 @@ class AgencyInfo:
             social_media_info, contact_info = socialScraper.scrape_info()
             profile_info = {}
 
-            # Figure out the google_api_key and then fix the below buckets 
+            # Figure out the google_api_key and then fix the below buckets
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
                     if os.environ.get('GOOGLE_API_KEY', None)  is not None:
@@ -58,6 +60,7 @@ class AgencyInfo:
             data_accessor.update_scrape_info(agency_details)
             return agency_details
         except Exception as ex:
+            logging.error(f"An error occurred while processing the agency information: {str(ex)}")
             print(f"An error occurred while processing the agency information: {str(ex)}")
 
 
