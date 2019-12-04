@@ -142,6 +142,7 @@ h4 {
 .homebody {
   height: calc(100vh - 120px);
   background: url('images/civicSquare.png') no-repeat fixed;
+  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
