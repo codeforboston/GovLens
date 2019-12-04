@@ -24,7 +24,20 @@ if __name__ == "__main__":
     agency_api_service = AgencyApiService()
     agencies = agency_api_service.get_all_agencies()
     event = {
-        "agencies": agencies
+        "agencies": [
+            {
+                "id": 2,
+                "name": "Traffic, Parking & Transportation",
+                "website": "https://www.cambridgema.gov/traffic",
+                "twitter": "",
+                "facebook": "",
+                "phone_number": "617-349-4242",
+                "address": "795 Massachusetts Ave.   Cambridge,\\r \\t\\t\\t\\t\\t\\tMA 02139",
+                "description": "",
+                "last_successful_scrape": "2019-07-07T00:23:58.830316Z",
+                "scrape_counter": 10
+            }
+        ]
     }
     scrape_data(event)
     print("SCRAPED")
