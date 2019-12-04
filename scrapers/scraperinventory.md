@@ -6,6 +6,9 @@ But when deployed to AWS, the scraper is invoked by the schedule and scrape_data
 
 if running from local, python scraper.py should run the scraper. make sure to set the environment variable to your local endpoint.
 
+GET the API key for accessing lighthouse from here. https://developers.google.com/speed/docs/insights/v5/get-started (click on the button get key)
+put that key in GOOGLE_API_KEY environment variable. 
+
 Pushing it to AWS lambda:
 1) zip the scraper folder.
 2) go to AWS lamba and upload the zipped folder https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions

@@ -19,6 +19,7 @@ def scrape_data(event, context=None):
 if __name__ == "__main__":
     # If running from local, set the environment variable to your local
     os.environ['govlens_api'] = "http://govlens.us-east-2.elasticbeanstalk.com/api/agencies/"
+    os.environ['GOOGLE_API_KEY'] = ""
     agency_api_service = AgencyApiService()
     agencies = agency_api_service.get_all_agencies()
     event = {

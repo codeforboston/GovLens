@@ -33,13 +33,18 @@ class AgencyInfo:
             # Figure out the google_api_key and then fix the below buckets 
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
-                    pass
-                    # profile_info[bucket] = securityScraper.get_security_privacy_info()
+                    if os.environ.get('GOOGLE_API_KEY', None)  is not None:
+                        profile_info[bucket] = securityScraper.get_security_privacy_info()
+                    else:
+                        print("google_api_key is not set. set GOOGLE_API_KEY as an environment variable")
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = socialScraper.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    pass
-                    # profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
+                    if os.environ.get('GOOGLE_API_KEY', None)  is not None: 
+                        profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
+                    else:
+                        print("google_api_key is not set. set GOOGLE_API_KEY as an environment variable")
+
 
 
             agency_details = {
