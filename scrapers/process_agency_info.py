@@ -1,4 +1,5 @@
-import requests, os, json
+import requests, os
+import logging
 from scrapers.social_scraper import SocialScraper
 from scrapers.security_scraper import SecurityScraper
 from scrapers.accessibility_scraper import AccessibilityScraper
@@ -18,6 +19,7 @@ class AgencyInfo:
             agency_url = self.agency.get('website',None)
             if agency_url is None or agency_url == '':
                 print(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
+                logging.error(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
                 return
             print(f"Scraping the website {agency_url}")
 
@@ -30,13 +32,21 @@ class AgencyInfo:
             social_media_info, contact_info = socialScraper.scrape_info()
             profile_info = {}
 
+            # Figure out the google_api_key and then fix the below buckets
             for bucket in self.buckets:
                 if bucket == "security_and_privacy":
-                    profile_info[bucket] = securityScraper.get_security_privacy_info()
+                    if os.environ.get('GOOGLE_API_KEY', None)  is not None:
+                        profile_info[bucket] = securityScraper.get_security_privacy_info()
+                    else:
+                        print("google_api_key is not set. set GOOGLE_API_KEY as an environment variable")
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = socialScraper.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
-                    profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
+                    if os.environ.get('GOOGLE_API_KEY', None)  is not None: 
+                        profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
+                    else:
+                        print("google_api_key is not set. set GOOGLE_API_KEY as an environment variable")
+
 
 
             agency_details = {
@@ -50,6 +60,7 @@ class AgencyInfo:
             data_accessor.update_scrape_info(agency_details)
             return agency_details
         except Exception as ex:
+            logging.error(f"An error occurred while processing the agency information: {str(ex)}")
             print(f"An error occurred while processing the agency information: {str(ex)}")
 
 

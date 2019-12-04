@@ -1,4 +1,3 @@
-import requests, os, json
 from agency_dataaccessor import AgencyDataAccessor
 '''Creating a class BaseScraper as a blueprint with methods:
 get_random_value() = creates an empty object with zero values as a starting point

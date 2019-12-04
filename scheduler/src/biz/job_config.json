@@ -1,0 +1,10 @@
+{
+    "job_trigger_settings": {
+        "day_of_job": "sun",
+        "hour": "11",
+        "minute": "25",
+        "second": "32"
+    },
+    "interval_between_runs_seconds": 20,
+    "agency_batch_size": 2
+}
