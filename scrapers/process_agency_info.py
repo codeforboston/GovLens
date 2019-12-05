@@ -12,6 +12,7 @@ class AgencyInfo:
         self.agency = agency
         self.website = agency['website']
         self.buckets = ["security_and_privacy","outreach_and_communication","website_accessibility"]
+        self.agency_dataaccessor = AgencyDataAccessor(None, self.agency)
 
     def process_agency_info(self):
         try:
@@ -20,9 +21,9 @@ class AgencyInfo:
             if agency_url is None or agency_url == '':
                 print(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
                 logging.error(f"Website url is not available for {self.agency['id']}, name: {self.agency['name']}")
+                self.agency_dataaccessor.update_agency_info(self.agency)
                 return
             print(f"Scraping the website {agency_url}")
-
             page = requests.get(agency_url, timeout=30)
             # Initialize scrapers
             socialScraper = SocialScraper(page, agency_url)
@@ -37,17 +38,11 @@ class AgencyInfo:
                 if bucket == "security_and_privacy":
                     if os.environ.get('GOOGLE_API_KEY', None)  is not None:
                         profile_info[bucket] = securityScraper.get_security_privacy_info()
-                    else:
-                        print("google_api_key is not set. set GOOGLE_API_KEY as an environment variable")
                 elif bucket == "outreach_and_communication":
                     profile_info[bucket] = socialScraper.get_outreach_communication_info(social_media_info, contact_info)
                 elif bucket == "website_accessibility":
                     if os.environ.get('GOOGLE_API_KEY', None)  is not None: 
                         profile_info[bucket] = accessibilityScraper.get_website_accessibility_info()
-                    else:
-                        print("google_api_key is not set. set GOOGLE_API_KEY as an environment variable")
-
-
 
             agency_details = {
                 "id": self.agency['id'],
@@ -56,8 +51,7 @@ class AgencyInfo:
                 "profile": profile_info
                 }
 
-            data_accessor = AgencyDataAccessor(None, self.agency)
-            data_accessor.update_scrape_info(agency_details)
+            self.agency_dataaccessor.enrich_agency_info_with_scrape_info(agency_details)
             return agency_details
         except Exception as ex:
             logging.error(f"An error occurred while processing the agency information: {str(ex)}")

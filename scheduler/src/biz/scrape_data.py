@@ -15,7 +15,8 @@ class ScraperService:
                 agency_info_request = {}
                 agency_info_request['agencies'] = agencies
                 json_request = json.dumps(agency_info_request)
-                print(f"{json.dumps(json_request[0])}")
+                names = [o['name'] for o in agencies]
+                print(f"Scraping for Agencies:  {json.dumps(names)}")
                 self.boto3client.invoke(FunctionName='scrapers', InvocationType='Event', Payload=json_request)
                 print(f"Completed invoking the lambda")
             except Exception as ex:
