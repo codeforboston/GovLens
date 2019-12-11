@@ -14,11 +14,9 @@ class AgencyDataAccessor:
         if token is None:
             self.token = "Django Api token"
  
-    def update_scrape_info(self, scrape_info):
+    def enrich_agency_info_with_scrape_info(self, scrape_info):
         try:
             outreach_and_communication = scrape_info['profile']['outreach_and_communication']
-            self.agency_info['scrape_counter'] = self.agency_info['scrape_counter'] + 1
-
             contact_info = outreach_and_communication['contact_access']['info']
             self.agency_info['address'] = contact_info.get('address', None)
             self.agency_info['phone_number'] = contact_info.get('phone_number', None)
@@ -31,6 +29,16 @@ class AgencyDataAccessor:
             else:
                 print(f"social media information not available for the agency {scrape_info['Website']}")
 
+            response = self.update_agency_info(self.agency_info)
+            return response
+        except Exception as ex:
+            print(
+                f"An error occurred while enriching the agency information with scrape information: {str(ex)}")
+    
+
+    def update_agency_info(self, agency_info):
+        try:
+            self.agency_info['scrape_counter'] = self.agency_info['scrape_counter'] + 1
             self.agency_info['last_successful_scrape'] = datetime.datetime.now()
             agency_url = f"{self.base_url}{self.agency_info['id']}/"
             response = requests.put(agency_url, data=self.agency_info, headers={'accept': 'application/json', 'Authorization': self.token})

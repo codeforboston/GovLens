@@ -20,6 +20,39 @@ class Scheduler:
         self.agency_list_size = data['agency_batch_size']
         self.job_trigger_settings = data['job_trigger_settings']
         self.interval_between_runs_seconds = data['interval_between_runs_seconds']
+        # there is an option to pass all these variables at run time using environment variables
+        if os.environ.get('day', None) is not None:
+            self.read_settings_from_environment_variables()
+
+    def read_settings_from_environment_variables(self):
+        if os.environ.get('agency_batch_size', None) is not None:
+            self.agency_list_size = int(os.environ.get('agency_batch_size'))
+        else:
+            self.agency_list_size = 4
+        if os.environ.get('interval_between_runs_seconds', None) is not None:
+            self.interval_between_runs_seconds = int(os.environ.get('interval_between_runs_seconds'))
+        else:
+            self.interval_between_runs_seconds = 20
+        if os.environ.get('day', None) is not None:
+            print(os.environ.get('day'))
+            print(os.environ.get('hour'))
+            print(os.environ.get('minute'))
+            print(os.environ.get('second'))
+            self.job_trigger_settings['day_of_job'] = os.environ.get('day')
+        else:
+            raise Exception("day of job is not specified in the environment variable")
+        if os.environ.get('hour', None) is not None:
+            self.job_trigger_settings['hour'] = os.environ.get('hour')
+        else:
+            raise Exception("hour is not specified in the environment variable")
+        if os.environ.get('minute', None) is not None:
+            self.job_trigger_settings['minute'] = os.environ.get('minute')
+        else:
+            raise Exception("minute is not specified in the environment variable")
+        if os.environ.get('second', None) is not None:
+            self.job_trigger_settings['second'] = os.environ.get('second')
+        else:
+            raise Exception("second is not specified in the environment variable")
 
     def scheduled_method(self):
         print(
