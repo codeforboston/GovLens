@@ -17,6 +17,7 @@ class Agency(models.Model):
     facebook = models.CharField(max_length=100,blank=True)
     phone_number = models.CharField(max_length=15,blank=True)
     address = models.CharField(max_length=250,blank=True)
+    notes = models.CharField(max_length=500,blank=True)
     description = models.CharField(max_length=1000,blank=True)
     last_successful_scrape = models.DateTimeField(blank=True,null=True)
     scrape_counter = models.IntegerField(default=0)
