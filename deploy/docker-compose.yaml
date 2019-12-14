@@ -14,18 +14,18 @@ services:
       - "80:80"
     mem_limit: 120m
     volumes:
-      - /var/app/current/civicpulse/deploy/nginx:/etc/nginx/conf.d
+      - /home/ec2-user/GovLens/deploy/nginx:/etc/nginx/conf.d
     depends_on:
       - app
 
   app:
     container_name: django_server
     image: muckrock/muckrock:1.0
-    command: ["sh", "/usr/src/app/deploy/container_start1.sh"]
+    command: ["sh", "/usr/src/app/deploy/container_start.sh"]
     stdin_open: true
     tty: true
     mem_limit: 120m
     volumes:
-        - /var/app/current/civicpulse:/usr/src/app
+        - /home/ec2-user/GovLens:/usr/src/app
     expose:
       - "8000"
