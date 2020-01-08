@@ -19,6 +19,7 @@ class Agency(models.Model):
     address = models.CharField(max_length=250,blank=True)
     notes = models.CharField(max_length=500,blank=True)
     description = models.CharField(max_length=1000,blank=True)
+    aliases = models.TextField(max_length=500, blank=True)
     last_successful_scrape = models.DateTimeField(blank=True,null=True)
     scrape_counter = models.IntegerField(default=0)
     logo = models.ImageField(upload_to=logo_path, blank=True)
