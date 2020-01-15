@@ -53,7 +53,8 @@ Make sure to set the environment variable to your local endpoint.
 AWS Lambda
 ~~~~~~~~~~
 Pushing it to AWS lambda:
-1) zip the ``scraper/`` folder.
-2) go to AWS lamba and upload the zipped folder: https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
-3) test the lambda by using this json (??)
-4) confirm that there are no errors by looking at cloudwatch logs: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logStream:group=/aws/lambda/scrapers;streamFilter=typeLogStreamPrefix
+
+1. zip the ``scraper/`` folder.
+2. go to AWS lamba and upload the zipped folder: https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
+3. test the lambda by using this json (??)
+4. confirm that there are no errors by looking at cloudwatch logs: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logStream:group=/aws/lambda/scrapers;streamFilter=typeLogStreamPrefix
