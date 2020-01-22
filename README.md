@@ -1,6 +1,6 @@
 # GovLens
 
-![](https://github.com/codeforboston/GovLens/workflows/lint_and_test.yml/badge.svg)
+![](https://github.com/codeforboston/GovLens/workflows/Lint%20and%20Test/badge.svg)
 
 ## About the project
 
