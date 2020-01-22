@@ -1,5 +1,7 @@
 # GovLens
 
+https://github.com/codeforboston/GovLens/workflows/lint_and_test.yml/badge.svg
+
 ## About the project
 
 GovLens is a government transparency project developed by MuckRock and Code for Boston engineers. Our mission is to create a more open, accessible, and secure democracy through examining the technical elements of government agency websites. We use algorithms to score thousands of federal and state agencies based on their transparency, security, privacy, and accessibility. We then publish our findings and help communicate to government agencies possible improvements to their infrastructures that would better the agency as a whole.
@@ -10,7 +12,7 @@ GovLens is a government transparency project developed by MuckRock and Code for 
 
 We get reminders all the time of how well our physical civic infrastructure is doing: Did my car hit a pothole? Are the swing sets covered in rust? It can be harder to see how well our digital civic infrastructure is holding up, however, particularly when it comes to the parts of the web that can be invisible to many people: How accessible is a site to people who rely on screen readers or who have reduced vision? Which third-party trackers have access to visitor data, and how is that data being guarded? Are government websites following basic best practices in utilizing secure connections?
 
-While we have a [National Bridge Inventory](https://www.fhwa.dot.gov/bridge/nbi.cfm) that monitors dangerous bridges and other federal agencies that monitor other core infrastructure issues, we do not have similar insights into how strong or weak much of our digital infrastructure is. 
+While we have a [National Bridge Inventory](https://www.fhwa.dot.gov/bridge/nbi.cfm) that monitors dangerous bridges and other federal agencies that monitor other core infrastructure issues, we do not have similar insights into how strong or weak much of our digital infrastructure is.
 
 GovLens helps to provide at least the start of an answer to that, by making those oftentimes overlooked aspects of digital infrastructure more visible via public report cards for each agency in our database as well as collated data for each jurisdiction and state, letting us see which areas of the country are leading the way and which might need a little more prodding.
 
@@ -43,7 +45,7 @@ The project is currently in testing stages, as we work to both develop usable, a
 
 ## Installation instructions
 
-Install python3 if you haven't installed it yet. 
+Install python3 if you haven't installed it yet.
 ```bash
 python3 --version
 ```
@@ -97,15 +99,15 @@ python3 manage.py shell
 >>> exit()
 ```
 
-The following steps are needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet. 
-Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints. 
+The following steps are needed in order to connect the api with the scrapers. If you do not wish to do that, then this may be skipped. We need to create a dummy user for the scraper to be able to access the api. The api is part of the Django projet.
+Note: The scrapers live in an independent environment not neccessarily in the same server as the Django website. The scrapers read and write data to the website using api endpoints.
 
 - create an admin user to be able to login to the admin portal of the website: <site-name>/admin
 
 ```bash
   python3 manage.py createsuperuser --username admin --email admin@admin.com
-  
-  # enter the password when prompted. It can be any password that you wish to use. 
+
+  # enter the password when prompted. It can be any password that you wish to use.
   # It is used for login to the admin website.
  ```
 - Start up the webserver so we can create a user for the scraper.
