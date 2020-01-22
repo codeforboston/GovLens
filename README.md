@@ -124,3 +124,13 @@ Finally, the database is ready to go! We are now ready to run the server:
 
 Navigate in your browser to `http://127.0.0.1:8000/` and you should see a list of
 agencies.
+
+## Code formatting
+GovLens enforces code style using [Black](https://github.com/psf/black) and pep8 rules using [Flake8](http://flake8.pycqa.org/en/latest/).
+To set up automatic code formatting for black standards, perform the following steps:
+- `pip install -U black pre-commit`
+- `pre-commit install`
+
+To manually run Flake8 from project root:
+- `pip install -U flake8`
+- `flake8 . --ignore E501,W503,E203`
