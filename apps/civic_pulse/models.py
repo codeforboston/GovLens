@@ -49,5 +49,8 @@ class Entry(models.Model):
     has_social_media = models.BooleanField(default=False)
     has_contact_info = models.BooleanField(default=False)
 
+    # notes
+    notes = models.TextField(blank=True)
+
     def __str__(self):
         return self.agency.__str__() + "_" + self.created_date.strftime("%m_%d")
