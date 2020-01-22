@@ -8,13 +8,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0001_initial'),
+        ("civic_pulse", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='agency',
-            name='name',
-            field=models.CharField(max_length=500),
+            model_name="agency", name="name", field=models.CharField(max_length=500),
         ),
     ]
