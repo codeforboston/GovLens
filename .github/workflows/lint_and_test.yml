@@ -1,11 +1,11 @@
-name: Python application
+name: Lint and Test
 
-on: 
+on:
   push:
     branches:
       - master
   pull_request:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
         flake8 . --count --ignore E501,W503,E203 --show-source --statistics
     - name: Lint with Black
       run: |
-        black . 
+        black .
     - name: Test with django
       run: |
         python manage.py test
