@@ -17,6 +17,7 @@ class AgencyAPITest(TestCase):
         self.assertEqual(200, response.status_code)
 
         agencies_json = json.loads(response.content.decode("utf-8"))
+<<<<<<< HEAD
         expected_results = [
             {
                 "id": 1,
@@ -27,7 +28,6 @@ class AgencyAPITest(TestCase):
                 "phone_number": "",
                 "address": "",
                 "description": "",
-                "notes": "",
                 "last_successful_scrape": None,
                 "scrape_counter": 0,
             },
@@ -40,12 +40,39 @@ class AgencyAPITest(TestCase):
                 "phone_number": "",
                 "address": "",
                 "description": "",
-                "notes": "",
                 "last_successful_scrape": None,
                 "scrape_counter": 0,
             },
         ]
         self.assertEqual(agencies_json, expected_results)
+=======
+        expected_results = [{
+            'id': 1,
+            'name': 'Test Agency 1',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
+        },{
+            'id': 2,
+            'name': 'Test Agency 2',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
+        }]
+        self.assertEqual(agencies_json,expected_results)
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
 
     def test_GET_Individual(self):
         response = self.client.get("/api/agencies/1/")
@@ -53,6 +80,7 @@ class AgencyAPITest(TestCase):
 
         agency_json = json.loads(response.content.decode("utf-8"))
         expected_results = {
+<<<<<<< HEAD
             "id": 1,
             "name": "Test Agency 1",
             "website": "",
@@ -61,9 +89,21 @@ class AgencyAPITest(TestCase):
             "phone_number": "",
             "address": "",
             "description": "",
-            "notes": "",
             "last_successful_scrape": None,
             "scrape_counter": 0,
+=======
+            'id': 1,
+            'name': 'Test Agency 1',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
         }
         self.assertEqual(agency_json, expected_results)
 
@@ -91,6 +131,7 @@ class AgencyAPITest(TestCase):
 
         json_response = json.loads(response.content.decode("utf-8"))
         expected_results = {
+<<<<<<< HEAD
             "id": 5,
             "name": "Test POST Agency",
             "website": "",
@@ -99,9 +140,21 @@ class AgencyAPITest(TestCase):
             "phone_number": "",
             "address": "",
             "description": "",
-            "notes": "",
             "last_successful_scrape": None,
             "scrape_counter": 0,
+=======
+            'id': 5,
+            'name': 'Test POST Agency',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
         }
 
         self.assertEqual(json_response, expected_results)
@@ -122,6 +175,7 @@ class EntryAPITest(TestCase):
         self.assertEqual(200, response.status_code)
 
         entries_json = json.loads(response.content.decode("utf-8"))
+<<<<<<< HEAD
         expected_results = [
             {
                 "id": 1,
@@ -132,7 +186,6 @@ class EntryAPITest(TestCase):
                 "good_performance": False,
                 "has_social_media": False,
                 "has_contact_info": False,
-                "notes": "",
             },
             {
                 "id": 2,
@@ -143,11 +196,35 @@ class EntryAPITest(TestCase):
                 "good_performance": False,
                 "has_social_media": False,
                 "has_contact_info": False,
-                "notes": "",
             },
         ]
 
         self.assertEqual(entries_json, expected_results)
+=======
+        expected_results = [{
+            'id': 1,
+            'agency': 1,
+            'https_enabled': False,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': False,
+            'has_contact_info': False,
+            'notes': '',
+        }, {
+            'id': 2,
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': False,
+            'has_contact_info': False,
+            'notes': '',
+        }]
+
+        self.assertEqual(entries_json,expected_results)
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
 
     def test_GET_Individual(self):
         response = self.client.get("/api/entries/1/")
@@ -155,6 +232,7 @@ class EntryAPITest(TestCase):
 
         entry_json = json.loads(response.content.decode("utf-8"))
         expected_results = {
+<<<<<<< HEAD
             "id": 1,
             "agency": 1,
             "https_enabled": False,
@@ -163,13 +241,24 @@ class EntryAPITest(TestCase):
             "good_performance": False,
             "has_social_media": False,
             "has_contact_info": False,
-            "notes": "",
+=======
+            'id': 1,
+            'agency': 1,
+            'https_enabled': False,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': False,
+            'has_contact_info': False,
+            'notes': '',
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
         }
 
         self.assertEqual(entry_json, expected_results)
 
     def test_POST_Unauthorized(self):
         data = {
+<<<<<<< HEAD
             "agency": 1,
             "https_enabled": True,
             "has_privacy_policy": False,
@@ -177,7 +266,16 @@ class EntryAPITest(TestCase):
             "good_performance": False,
             "has_social_media": True,
             "has_contact_info": False,
-            "notes": "",
+=======
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': True,
+            'has_contact_info': False,
+            'notes':'',
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
         }
         response = self.client.post("/api/entries/", data=data, format="json")
         self.assertEqual(401, response.status_code)
@@ -194,6 +292,7 @@ class EntryAPITest(TestCase):
         token = Token.objects.create(user=user)
 
         data = {
+<<<<<<< HEAD
             "agency": 1,
             "https_enabled": True,
             "has_privacy_policy": False,
@@ -201,7 +300,16 @@ class EntryAPITest(TestCase):
             "good_performance": False,
             "has_social_media": True,
             "has_contact_info": False,
-            "notes": "",
+=======
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': True,
+            'has_contact_info': False,
+            'notes': '',
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
         }
 
         self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
@@ -210,6 +318,7 @@ class EntryAPITest(TestCase):
 
         json_response = json.loads(response.content.decode("utf-8"))
         expected_results = {
+<<<<<<< HEAD
             "id": 3,
             "agency": 1,
             "https_enabled": True,
@@ -218,6 +327,16 @@ class EntryAPITest(TestCase):
             "good_performance": False,
             "has_social_media": True,
             "has_contact_info": False,
-            "notes": "",
+=======
+            'id': 3,
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': True,
+            'has_contact_info': False,
+            'notes': '',
+>>>>>>> 31d51aeaf0161163c48bc23a31bd1759ec9bc892
         }
         self.assertEqual(json_response, expected_results)
