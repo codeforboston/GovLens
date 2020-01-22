@@ -31,6 +31,7 @@ class AgencyAPITest(TestCase):
             'phone_number': '',
             'address': '',
             'description': '',
+            'notes': '',
             'last_successful_scrape': None,
             'scrape_counter': 0
         },{
@@ -42,6 +43,7 @@ class AgencyAPITest(TestCase):
             'phone_number': '',
             'address': '',
             'description': '',
+            'notes': '',
             'last_successful_scrape': None,
             'scrape_counter': 0
         }]
@@ -61,6 +63,7 @@ class AgencyAPITest(TestCase):
             'phone_number': '',
             'address': '',
             'description': '',
+            'notes': '',
             'last_successful_scrape': None,
             'scrape_counter': 0
         }
@@ -99,6 +102,7 @@ class AgencyAPITest(TestCase):
             'phone_number': '',
             'address': '',
             'description': '',
+            'notes': '',
             'last_successful_scrape': None,
             'scrape_counter': 0
         }
@@ -136,7 +140,8 @@ class EntryAPITest(TestCase):
             'mobile_friendly': False,
             'good_performance': False,
             'has_social_media': False,
-            'has_contact_info': False
+            'has_contact_info': False,
+            'notes': '',
         }, {
             'id': 2,
             'agency': 1,
@@ -145,7 +150,8 @@ class EntryAPITest(TestCase):
             'mobile_friendly': False,
             'good_performance': False,
             'has_social_media': False,
-            'has_contact_info': False
+            'has_contact_info': False,
+            'notes': '',
         }]
 
         self.assertEqual(entries_json,expected_results)
@@ -163,7 +169,8 @@ class EntryAPITest(TestCase):
             'mobile_friendly': False,
             'good_performance': False,
             'has_social_media': False,
-            'has_contact_info': False
+            'has_contact_info': False,
+            'notes': '',
         }
 
         self.assertEqual(entry_json, expected_results)
@@ -176,7 +183,8 @@ class EntryAPITest(TestCase):
             'mobile_friendly': False,
             'good_performance': False,
             'has_social_media': True,
-            'has_contact_info': False
+            'has_contact_info': False,
+            'notes':'',
         }
         response = self.client.post('/api/entries/',data=data,format='json')
         self.assertEqual(401,response.status_code)
@@ -195,7 +203,8 @@ class EntryAPITest(TestCase):
             'mobile_friendly': False,
             'good_performance': False,
             'has_social_media': True,
-            'has_contact_info': False
+            'has_contact_info': False,
+            'notes': '',
         }
 
         self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
@@ -211,6 +220,7 @@ class EntryAPITest(TestCase):
             'mobile_friendly': False,
             'good_performance': False,
             'has_social_media': True,
-            'has_contact_info': False
+            'has_contact_info': False,
+            'notes': '',
         }
         self.assertEqual(json_response, expected_results)
