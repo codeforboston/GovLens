@@ -17,33 +17,32 @@ class AgencyAPITest(TestCase):
         self.assertEqual(200, response.status_code)
 
         agencies_json = json.loads(response.content.decode("utf-8"))
-        expected_results = [
-            {
-                "id": 1,
-                "name": "Test Agency 1",
-                "website": "",
-                "twitter": "",
-                "facebook": "",
-                "phone_number": "",
-                "address": "",
-                "description": "",
-                "last_successful_scrape": None,
-                "scrape_counter": 0,
-            },
-            {
-                "id": 2,
-                "name": "Test Agency 2",
-                "website": "",
-                "twitter": "",
-                "facebook": "",
-                "phone_number": "",
-                "address": "",
-                "description": "",
-                "last_successful_scrape": None,
-                "scrape_counter": 0,
-            },
-        ]
-        self.assertEqual(agencies_json, expected_results)
+        expected_results = [{
+            'id': 1,
+            'name': 'Test Agency 1',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
+        },{
+            'id': 2,
+            'name': 'Test Agency 2',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
+        }]
+        self.assertEqual(agencies_json,expected_results)
 
     def test_GET_Individual(self):
         response = self.client.get("/api/agencies/1/")
@@ -51,16 +50,17 @@ class AgencyAPITest(TestCase):
 
         agency_json = json.loads(response.content.decode("utf-8"))
         expected_results = {
-            "id": 1,
-            "name": "Test Agency 1",
-            "website": "",
-            "twitter": "",
-            "facebook": "",
-            "phone_number": "",
-            "address": "",
-            "description": "",
-            "last_successful_scrape": None,
-            "scrape_counter": 0,
+            'id': 1,
+            'name': 'Test Agency 1',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
         }
         self.assertEqual(agency_json, expected_results)
 
@@ -88,16 +88,17 @@ class AgencyAPITest(TestCase):
 
         json_response = json.loads(response.content.decode("utf-8"))
         expected_results = {
-            "id": 5,
-            "name": "Test POST Agency",
-            "website": "",
-            "twitter": "",
-            "facebook": "",
-            "phone_number": "",
-            "address": "",
-            "description": "",
-            "last_successful_scrape": None,
-            "scrape_counter": 0,
+            'id': 5,
+            'name': 'Test POST Agency',
+            'website': '',
+            'twitter': '',
+            'facebook': '',
+            'phone_number': '',
+            'address': '',
+            'description': '',
+            'notes': '',
+            'last_successful_scrape': None,
+            'scrape_counter': 0
         }
 
         self.assertEqual(json_response, expected_results)
@@ -118,28 +119,27 @@ class EntryAPITest(TestCase):
         self.assertEqual(200, response.status_code)
 
         entries_json = json.loads(response.content.decode("utf-8"))
-        expected_results = [
-            {
-                "id": 1,
-                "agency": 1,
-                "https_enabled": False,
-                "has_privacy_policy": False,
-                "mobile_friendly": False,
-                "good_performance": False,
-                "has_social_media": False,
-                "has_contact_info": False,
-            },
-            {
-                "id": 2,
-                "agency": 1,
-                "https_enabled": True,
-                "has_privacy_policy": False,
-                "mobile_friendly": False,
-                "good_performance": False,
-                "has_social_media": False,
-                "has_contact_info": False,
-            },
-        ]
+        expected_results = [{
+            'id': 1,
+            'agency': 1,
+            'https_enabled': False,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': False,
+            'has_contact_info': False,
+            'notes': '',
+        }, {
+            'id': 2,
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': False,
+            'has_contact_info': False,
+            'notes': '',
+        }]
 
         self.assertEqual(entries_json, expected_results)
 
@@ -149,27 +149,29 @@ class EntryAPITest(TestCase):
 
         entry_json = json.loads(response.content.decode("utf-8"))
         expected_results = {
-            "id": 1,
-            "agency": 1,
-            "https_enabled": False,
-            "has_privacy_policy": False,
-            "mobile_friendly": False,
-            "good_performance": False,
-            "has_social_media": False,
-            "has_contact_info": False,
+            'id': 1,
+            'agency': 1,
+            'https_enabled': False,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': False,
+            'has_contact_info': False,
+            'notes': '',
         }
 
         self.assertEqual(entry_json, expected_results)
 
     def test_POST_Unauthorized(self):
         data = {
-            "agency": 1,
-            "https_enabled": True,
-            "has_privacy_policy": False,
-            "mobile_friendly": False,
-            "good_performance": False,
-            "has_social_media": True,
-            "has_contact_info": False,
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': True,
+            'has_contact_info': False,
+            'notes':'',
         }
         response = self.client.post("/api/entries/", data=data, format="json")
         self.assertEqual(401, response.status_code)
@@ -186,13 +188,14 @@ class EntryAPITest(TestCase):
         token = Token.objects.create(user=user)
 
         data = {
-            "agency": 1,
-            "https_enabled": True,
-            "has_privacy_policy": False,
-            "mobile_friendly": False,
-            "good_performance": False,
-            "has_social_media": True,
-            "has_contact_info": False,
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': True,
+            'has_contact_info': False,
+            'notes': '',
         }
 
         self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
@@ -201,13 +204,14 @@ class EntryAPITest(TestCase):
 
         json_response = json.loads(response.content.decode("utf-8"))
         expected_results = {
-            "id": 3,
-            "agency": 1,
-            "https_enabled": True,
-            "has_privacy_policy": False,
-            "mobile_friendly": False,
-            "good_performance": False,
-            "has_social_media": True,
-            "has_contact_info": False,
+            'id': 3,
+            'agency': 1,
+            'https_enabled': True,
+            'has_privacy_policy': False,
+            'mobile_friendly': False,
+            'good_performance': False,
+            'has_social_media': True,
+            'has_contact_info': False,
+            'notes': '',
         }
         self.assertEqual(json_response, expected_results)

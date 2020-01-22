@@ -11,14 +11,14 @@ def logo_path(instance, filename):
 class Agency(models.Model):
     id = models.IntegerField(primary_key=True)
     created_date = models.DateTimeField(default=timezone.now)
-    name = models.CharField(max_length=250)
-    website = models.CharField(max_length=100, blank=True)
-    twitter = models.CharField(max_length=100, blank=True)
-    facebook = models.CharField(max_length=100, blank=True)
-    phone_number = models.CharField(max_length=15, blank=True)
-    address = models.CharField(max_length=250, blank=True)
-    notes = models.CharField(max_length=500, blank=True)
-    description = models.CharField(max_length=1000, blank=True)
+    name = models.TextField()
+    website = models.TextField(blank=True)
+    twitter = models.TextField(blank=True)
+    facebook = models.TextField(blank=True)
+    phone_number = models.TextField(blank=True)
+    address = models.TextField(blank=True)
+    notes = models.TextField(blank=True)
+    description = models.TextField(blank=True)
     aliases = models.TextField(max_length=500, blank=True)
     last_successful_scrape = models.DateTimeField(blank=True, null=True)
     scrape_counter = models.IntegerField(default=0)
@@ -48,6 +48,9 @@ class Entry(models.Model):
     # Outreach/Communication
     has_social_media = models.BooleanField(default=False)
     has_contact_info = models.BooleanField(default=False)
+
+    # notes
+    notes = models.TextField(blank=True)
 
     def __str__(self):
         return self.agency.__str__() + "_" + self.created_date.strftime("%m_%d")
