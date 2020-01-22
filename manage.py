@@ -12,6 +12,12 @@ if __name__ == "__main__":
         # exceptions on Python 2.
         try:
             import django
+
+            raise ImportError(
+                "Django installed with version {} but failed to import core.management".format(
+                    django.VERSION
+                )
+            )
         except ImportError:
             raise ImportError(
                 "Couldn't import Django. Are you sure it's installed and "

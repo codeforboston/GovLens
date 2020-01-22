@@ -4,7 +4,7 @@ from django.utils import timezone
 
 def logo_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/agency_logos/<id>/<filename>
-    return 'agency_logos/{0}/{1}'.format(instance.id, filename)
+    return "agency_logos/{0}/{1}".format(instance.id, filename)
 
 
 # Create your models here.
@@ -20,13 +20,13 @@ class Agency(models.Model):
     notes = models.TextField(blank=True)
     description = models.TextField(blank=True)
     aliases = models.TextField(max_length=500, blank=True)
-    last_successful_scrape = models.DateTimeField(blank=True,null=True)
+    last_successful_scrape = models.DateTimeField(blank=True, null=True)
     scrape_counter = models.IntegerField(default=0)
     logo = models.ImageField(upload_to=logo_path, blank=True)
 
     # Geolocation
-    latitude = models.DecimalField(max_digits=8, decimal_places=3,default=0)
-    longitude = models.DecimalField(max_digits=8, decimal_places=3,default=0)
+    latitude = models.DecimalField(max_digits=8, decimal_places=3, default=0)
+    longitude = models.DecimalField(max_digits=8, decimal_places=3, default=0)
 
     def __str__(self):
         return self.name
@@ -34,7 +34,7 @@ class Agency(models.Model):
 
 class Entry(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
-    agency = models.ForeignKey(Agency,on_delete=models.CASCADE)
+    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
 
     # Security/Privacy
     https_enabled = models.BooleanField(default=False)

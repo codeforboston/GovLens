@@ -1,5 +1,6 @@
 from .health import HealthController
 
+
 class Registrator:
     def __init__(self, app, base_url):
         self.controllers = [HealthController()]

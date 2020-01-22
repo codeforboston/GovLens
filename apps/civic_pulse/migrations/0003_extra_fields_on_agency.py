@@ -9,43 +9,41 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0002_increase_name_length'),
+        ("civic_pulse", "0002_increase_name_length"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='agency',
-            name='created_date',
+            model_name="agency",
+            name="created_date",
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
         migrations.AddField(
-            model_name='agency',
-            name='facebook',
+            model_name="agency",
+            name="facebook",
             field=models.CharField(blank=True, max_length=100),
         ),
         migrations.AddField(
-            model_name='agency',
-            name='phone_number',
+            model_name="agency",
+            name="phone_number",
             field=models.CharField(blank=True, max_length=15),
         ),
         migrations.AddField(
-            model_name='agency',
-            name='twitter',
+            model_name="agency",
+            name="twitter",
             field=models.CharField(blank=True, max_length=100),
         ),
         migrations.AddField(
-            model_name='agency',
-            name='website',
+            model_name="agency",
+            name="website",
             field=models.CharField(blank=True, max_length=100),
         ),
         migrations.AlterField(
-            model_name='agency',
-            name='id',
+            model_name="agency",
+            name="id",
             field=models.IntegerField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='agency',
-            name='name',
-            field=models.CharField(max_length=250),
+            model_name="agency", name="name", field=models.CharField(max_length=250),
         ),
     ]

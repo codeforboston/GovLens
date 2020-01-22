@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0005_add_agency_fields'),
+        ("civic_pulse", "0005_add_agency_fields"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='entry',
-            name='hsts_enabled',
+            model_name="entry",
+            name="hsts_enabled",
             field=models.BooleanField(default=False),
         ),
     ]

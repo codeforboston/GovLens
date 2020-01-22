@@ -102,3 +102,6 @@ sftp-config.json
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# rebase/merge diff files
+*.orig
