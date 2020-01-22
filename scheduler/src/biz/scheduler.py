@@ -91,14 +91,14 @@ class Scheduler:
             scheduler.start()
         else:
             print(
-                f"done with scraping at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                f"done with scraping at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
             )
 
     def reset_schedule_parameters(self):
         self.queue_size = 0
         self.job_queue = None
         print(
-            f"Done Scraping the data for the agencies at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            f"Done Scraping the data for the agencies at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         )
 
     def scrape_websites(self):
