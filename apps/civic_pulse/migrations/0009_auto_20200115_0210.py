@@ -6,48 +6,34 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0008_agency_aliases'),
+        ("civic_pulse", "0008_agency_aliases"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='agency',
-            name='address',
+            model_name="agency", name="address", field=models.TextField(blank=True),
+        ),
+        migrations.AlterField(
+            model_name="agency", name="description", field=models.TextField(blank=True),
+        ),
+        migrations.AlterField(
+            model_name="agency", name="facebook", field=models.TextField(blank=True),
+        ),
+        migrations.AlterField(
+            model_name="agency", name="name", field=models.TextField(),
+        ),
+        migrations.AlterField(
+            model_name="agency", name="notes", field=models.TextField(blank=True),
+        ),
+        migrations.AlterField(
+            model_name="agency",
+            name="phone_number",
             field=models.TextField(blank=True),
         ),
         migrations.AlterField(
-            model_name='agency',
-            name='description',
-            field=models.TextField(blank=True),
+            model_name="agency", name="twitter", field=models.TextField(blank=True),
         ),
         migrations.AlterField(
-            model_name='agency',
-            name='facebook',
-            field=models.TextField(blank=True),
-        ),
-        migrations.AlterField(
-            model_name='agency',
-            name='name',
-            field=models.TextField(),
-        ),
-        migrations.AlterField(
-            model_name='agency',
-            name='notes',
-            field=models.TextField(blank=True),
-        ),
-        migrations.AlterField(
-            model_name='agency',
-            name='phone_number',
-            field=models.TextField(blank=True),
-        ),
-        migrations.AlterField(
-            model_name='agency',
-            name='twitter',
-            field=models.TextField(blank=True),
-        ),
-        migrations.AlterField(
-            model_name='agency',
-            name='website',
-            field=models.TextField(blank=True),
+            model_name="agency", name="website", field=models.TextField(blank=True),
         ),
     ]

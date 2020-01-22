@@ -6,38 +6,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('civic_pulse', '0003_extra_fields_on_agency'),
+        ("civic_pulse", "0003_extra_fields_on_agency"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='entry',
-            name='good_performance',
+            model_name="entry",
+            name="good_performance",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='entry',
-            name='has_contact_info',
+            model_name="entry",
+            name="has_contact_info",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='entry',
-            name='has_privacy_policy',
+            model_name="entry",
+            name="has_privacy_policy",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='entry',
-            name='has_social_media',
+            model_name="entry",
+            name="has_social_media",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='entry',
-            name='https_enabled',
+            model_name="entry",
+            name="https_enabled",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='entry',
-            name='mobile_friendly',
+            model_name="entry",
+            name="mobile_friendly",
             field=models.BooleanField(default=False),
         ),
     ]

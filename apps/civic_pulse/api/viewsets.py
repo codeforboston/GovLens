@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from apps.civic_pulse.api.serializers import AgencySerializer,EntrySerializer
+from apps.civic_pulse.api.serializers import AgencySerializer, EntrySerializer
 from apps.civic_pulse.models import Agency, Entry
 
 
