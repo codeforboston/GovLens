@@ -122,7 +122,7 @@ python3 manage.py drf_create_token scraper
 ```
 Finally, the database is ready to go! We are now ready to run the server:
 
-Navigate in your browser to `http://127.0.0.1:8000/` and you should see a list of
+Navigate in your browser to `http://127.0.0.1:8000/admin`. Log in with the new admin user you just created. Click on Agencys and you should see a list of
 agencies.
 
 ## Code formatting
