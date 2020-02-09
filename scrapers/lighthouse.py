@@ -1,4 +1,4 @@
-from scrapers.base_api_client import ApiClient
+from .scrapers.base_api_client import ApiClient
 
 
 GOOGLE_API_KEY = ""  # os.environ['GOOGLE_API_KEY']

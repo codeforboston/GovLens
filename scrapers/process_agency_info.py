@@ -1,10 +1,10 @@
 import os
 import requests
 import logging
-from scrapers.social_scraper import SocialScraper
-from scrapers.security_scraper import SecurityScraper
-from scrapers.accessibility_scraper import AccessibilityScraper
-from agency_dataaccessor import AgencyDataAccessor
+from .scrapers.social_scraper import SocialScraper
+from .scrapers.security_scraper import SecurityScraper
+from .scrapers.accessibility_scraper import AccessibilityScraper
+from .agency_dataaccessor import AgencyDataAccessor
 
 
 class AgencyInfo:
