@@ -4,6 +4,8 @@ from .base_scraper import BaseScraper
 import re
 import logging
 
+logger = logging.getLogger(__name__)
+
 
 class SocialScraper(BaseScraper):
 
@@ -39,34 +41,29 @@ class SocialScraper(BaseScraper):
                         elif any(link in tag["href"] for link in social_media_criteria):
                             social_media_links.append(tag["href"])
                 except Exception as ex:
-                    print(
-                        f"An error occurred while trying to extract the social media information: {str(ex)}"
-                    )
                     logging.error(
-                        f"An error occurred while trying to extract the social media information: {str(ex)}"
+                        ex,
+                        "An error occurred while trying to extract the social media information",
                     )
             if contact_us_link:
                 if "http" in contact_us_link["href"]:
-                    print(
+                    logger.info(
                         f"making an extra call to get the contact info: {contact_us_link['href']}"
                     )
                     contact_us_page = requests.get(contact_us_link["href"])
                 else:
-                    print(
+                    logger.info(
                         f"making an extra call to get the contact info: {self.url+contact_us_link['href']}"
                     )
                     contact_us_page = requests.get(self.url + contact_us_link["href"])
                 contact_us_soup = BeautifulSoup(contact_us_page.content, "html.parser")
                 contact_info = self.get_contact_info(contact_us_soup)
             else:
-                print("not making an extra call to get the contact info")
+                logger.info("not making an extra call to get the contact info")
                 contact_info = self.get_contact_info(soup)
         except Exception as ex:
-            print(
-                f"An error occurred while processing the social media information: {str(ex)}"
-            )
             logging.error(
-                f"An error occurred while processing the social media information: {str(ex)}"
+                ex, f"An error occurred while processing the social media information"
             )
 
         return social_media_links, contact_info
@@ -106,15 +103,13 @@ class SocialScraper(BaseScraper):
                     "address": list(set(address))[0] if address else [],
                 }
             else:
-                print("Contact Information not available")
+                logger.warning("Contact Information not available")
                 all_contact_info = {"email": [], "phone_number": [], "address": []}
             return all_contact_info
-        except Exception:
-            print(
-                "An error occurred while extracting the contact information for the firm {self.url}: {str(ex)}"
-            )
+        except Exception as ex:
             logging.error(
-                "An error occurred while extracting the contact information for the firm {self.url}: {str(ex)}"
+                ex,
+                "An error occurred while extracting the contact information for the firm {self.url}",
             )
             return None
 
