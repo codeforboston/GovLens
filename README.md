@@ -110,20 +110,14 @@ Note: The scrapers live in an independent environment not neccessarily in the sa
   # enter the password when prompted. It can be any password that you wish to use.
   # It is used for login to the admin website.
  ```
-- Start up the webserver so we can create a user for the scraper.
+- Start up the webserver
 ```bash
 python3 manage.py runserver
 ```
-- Visit localhost:8000/admin and follow the UI to add a new user named "scraper", set the password to whatever you would like but make note of it.
-
-- In a new terminal tab, create a token for the scraper user using the following command
-```bash
-python3 manage.py drf_create_token scraper
-```
-Finally, the database is ready to go! We are now ready to run the server:
-
 Navigate in your browser to `http://127.0.0.1:8000/admin`. Log in with the new admin user you just created. Click on Agencys and you should see a list of
-agencies.
+agencies created with the ``fill_agency_objects`` command.
+
+To setup the scraper, read [the scraper README](scapers/README.rst).
 
 ## Code formatting
 GovLens enforces code style using [Black](https://github.com/psf/black) and pep8 rules using [Flake8](http://flake8.pycqa.org/en/latest/).

@@ -27,28 +27,38 @@ Directory Structure
       ├── security_scraper.py       - scrapes for HTTPS & privacy policy
       └── social_scraper.py         - scrapes for phone number, email, address, social media
 
-Requirements
-============
+Quick Start
+===========
 
-Google Lighthouse API Key
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Get the API key for accessing lighthouse from here: https://developers.google.com/speed/docs/insights/v5/get-started (click on the button get key)
+Configuration
+~~~~~~~~~~~~~
 
-Put that key in GOOGLE_API_KEY environment variable.
+There are a few required environmental variables. The easiest way to set them in development is to create a file called `.env` in the root directory of this repository (don't commit this file). The file (named `.env`) should contain the following text::
 
-Running the Scrapers
-====================
-``scrape_handler.py`` is the entry point for scraping.
-When we run from our local machine, we get the list of agencies and start scraping them.
-But when deployed to AWS, the scraper is invoked by the schedule and ``scrape_handler.scrape_data()`` is the method hooked up to the lambda.
+    GOVLENS_API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    GOVLENS_API_ENDPOINT=http://127.0.0.1:8000/api/agencies/
+    GOOGLE_API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXX
 
-Local
-~~~~~
-If running from local, the following command should run the scraper::
+To get the ``GOOGLE_API_TOKEN``, you need to visit the following page: https://developers.google.com/speed/docs/insights/v5/get-started
 
-  python scraper.py
+To get the ``GOVLENS_API_TOKEN``, run ``python3 manage.py create_scraper_user``. Copy the token from the command output and paste it into the ``.env`` file.
 
-Make sure to set the environment variable to your local endpoint.
+Execution
+~~~~~~~~~
+
+Once you have created the `.env` file as mentioned above, run the scraper::
+
+  # run the following from the root directory of the repository
+  python3 -m scrapers.scrape_handler
+
+Design
+======
+
+The scraper is intended to be used both locally and on AWS Lambda.
+
+The ``scrapers`` directory in the root of this repository is the top-level Python package for this project. This means that any absolute imports should begin with ``scrapers.MODULE_NAME_HERE``.
+
+``scrapers/scrape_handler.py`` is the main Python module invoked. On AWS Lambda, the method ``scrape_handler.scrape_data()`` is imported and called directly.
 
 AWS Lambda
 ~~~~~~~~~~
