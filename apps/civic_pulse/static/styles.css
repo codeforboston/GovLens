@@ -17,7 +17,7 @@
 body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
-  color: #818181;
+  color: #000000;
 }
 
 h2 {
@@ -293,22 +293,24 @@ body {
 .donut {
   stroke: #c4c4c4;
   stroke-width: 6;
+  stroke-dashoffset: 25;
   animation: donut2 3s;
-  stroke-dasharray: 80, 20;
+  stroke-dasharray: 20, 80;
   filter:url(#shadow);
 }
 
 @keyframes donut2 {
+
   0% {
       stroke-dasharray: 0, 100;
   }
   100% {
-      stroke-dasharray: 80, 20;
+      stroke-dasharray: 20, 80;
   }
 }
 
 .our-card {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(228,228,228,0.95);
 }
 
 .card-header {
@@ -316,3 +318,20 @@ body {
   font-size: 1.4em;
   font-style: bold;
 }
+
+@media (min-width: 990px) {
+  .col-md-3 {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+  .col-md-3 {
+    -ms-flex: none;
+    flex: none;
+    max-width: 100%;
+  }
+}
+
