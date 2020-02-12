@@ -27,7 +27,5 @@ jobs:
         aws-region: us-east-2
         mask-aws-account-id: true
     - uses: actions/checkout@v1
-    - name: Install the AWS CLI
-      run: pip3 install awscli
     - name: Check AWS Configuration
       run: aws configure list
