@@ -17,7 +17,7 @@ def fill_agency_objects(
     filepath=os.path.join(os.path.dirname(__file__), "../data/agencies.csv")
 ):
 
-    with open(filepath) as file:
+    with open(filepath, encoding='utf-8') as file:
         reader = csv.reader(file)
         next(reader, None)  # skip the headers
 
