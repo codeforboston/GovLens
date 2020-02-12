@@ -3,19 +3,18 @@ name: Deploy to Staging
 
 on:
   push:
-    tags: 
+    tags:
       - release*
   pull_request:
-    tags: 
+    tags:
       - release*
-  
-  
+
+
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1.0.1
@@ -28,4 +27,4 @@ jobs:
         mask-aws-account-id: true
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: echo Hello, world!
+      run: python test.py
