@@ -14,19 +14,18 @@ on:
 
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1.0.1
-      env:
+      with:
         # AWS Access Key ID
         aws-access-key-id: ${{ secrets.aws_access_key }}
         # AWS Secret Access Key
         aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
         aws-region: us-east-2
         mask-aws-account-id: true
-    - uses: actions/checkout@v1
     - name: Run a one-line script
+      uses: actions/checkout@v1
       run: python3 test.py
