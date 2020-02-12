@@ -1,4 +1,4 @@
-name: Deploy to Staging
+name: WIP Deploy Action
 
 
 on:
@@ -29,4 +29,4 @@ jobs:
         mask-aws-account-id: true
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: python test.py
+      run: python3 test.py
