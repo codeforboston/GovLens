@@ -3,6 +3,8 @@ name: Deploy to Staging
 
 on:
   push:
+    branches:
+      - deploy_action
     tags:
       - release*
   pull_request:
