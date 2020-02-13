@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block css %} {% endblock css %}
+{% block content %}
+<div class="container-fluid">
+    {% if agencies %}
+    <ul class="agency-list">
+
+        {% for agency in agencies %}
+        <li>
+            <a href="{% url 'agency-detail' agency.id %}">{{ agency.name }}</a>
+        </li>
+        {% endfor %}
+
+
+        {% else %}
+        <p>No agencies available.</p>
+        {% endif %} 
+        </div>
+        
+</div>
+{% endblock content %}

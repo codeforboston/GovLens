@@ -21,15 +21,16 @@ from apps.civic_pulse.views import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 router = routers.DefaultRouter()
-router.register(r'entries', EntryViewSet)
-router.register(r'agencies', AgencyViewSet)
+router.register(r"entries", EntryViewSet)
+router.register(r"agencies", AgencyViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(router.urls)),
-#    url(r'^$', AgencyListView.as_view(), name='index'),
-    url(r'^$', HomeView.as_view(), name='index'),
-    url(r'^agency/(?P<pk>[0-9]+)/$',AgencyView.as_view(),name='agency-detail'),
+    url(r"^admin/", admin.site.urls),
+    url(r"^api/", include(router.urls)),
+    url(r"^agency-list/$", AgencyListView.as_view(), name="index"),
+    url(r"^agency-list/all", AgencyListViewAll.as_view(), name="agency-list-all"),
+    url(r"^$", HomeView.as_view(), name="index"),
+    url(r"^agency/(?P<pk>[0-9]+)/$", AgencyView.as_view(), name="agency-detail"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
