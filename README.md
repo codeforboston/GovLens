@@ -117,7 +117,7 @@ python3 manage.py runserver
 Navigate in your browser to `http://127.0.0.1:8000/admin`. Log in with the new admin user you just created. Click on Agencys and you should see a list of
 agencies created with the ``fill_agency_objects`` command.
 
-To setup the scraper, read [the scraper README](scapers/README.rst).
+To setup the scraper, read [the scraper README](scrapers/README.rst).
 
 ## Code formatting
 GovLens enforces code style using [Black](https://github.com/psf/black) and pep8 rules using [Flake8](http://flake8.pycqa.org/en/latest/).
