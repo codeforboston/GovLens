@@ -19,9 +19,11 @@ RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev zlib-dev jpeg-
                        tcl-dev \
                        harfbuzz-dev \
                        fribidi-dev
-RUN pip3 install --upgrade setuptools
+RUN pip3 install --upgrade pip setuptools
 RUN pip3 install -r requirements.txt
+
+COPY . .
 
 # Server
 EXPOSE 8000
-STOPSIGNAL SIGINT
+ENTRYPOINT python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000
