@@ -1,7 +1,7 @@
-from scrapers.base_api_client import ApiClient
+from .scrapers.base_api_client import ApiClient
+from . import settings
 
 
-GOOGLE_API_KEY = ""  # os.environ['GOOGLE_API_KEY']
 PAGE_INSIGHTS_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
 MOBILE_FRIENDLY_ENDPOINT = "https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run"  # from what i have tested, very hard to automate
 
@@ -15,7 +15,7 @@ Lighthouse has 5 categories of information that can be pulled from a url
 
 
 class PageInsightsClient(ApiClient):
-    def __init__(self, api_uri=PAGE_INSIGHTS_ENDPOINT, api_key=GOOGLE_API_KEY):
+    def __init__(self, api_uri=PAGE_INSIGHTS_ENDPOINT, api_key=settings.GOOGLE_API_KEY):
         ApiClient.__init__(self, api_uri, api_key)
 
     def get_page_insights(self, url, category):
@@ -24,7 +24,9 @@ class PageInsightsClient(ApiClient):
 
 
 class GoogleMobileFriendlyClient(ApiClient):
-    def __init__(self, api_uri=MOBILE_FRIENDLY_ENDPOINT, api_key=GOOGLE_API_KEY):
+    def __init__(
+        self, api_uri=MOBILE_FRIENDLY_ENDPOINT, api_key=settings.GOOGLE_API_KEY
+    ):
         self.urls = []
         self.results = []
         ApiClient.__init__(self, api_uri, api_key)
