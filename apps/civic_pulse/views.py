@@ -1,17 +1,25 @@
-from django.views import generic
+from django.views.generic import ListView, DetailView
 from .models import Agency
 
 
-class AgencyListView(generic.ListView):
+class AgencyListView(ListView):
     template_name = "agency-list.html"
     context_object_name = "agencies"
-    paginate_by = 25
+    paginate_by = 50
 
     def get_queryset(self):
         return Agency.objects.order_by("created_date")
 
 
-class AgencyView(generic.DetailView):
+class AgencyListViewAll(ListView):
+    template_name = "agency-list-all.html"
+    context_object_name = "agencies"
+
+    def get_queryset(self):
+        return Agency.objects.order_by("created_date")
+
+
+class AgencyView(DetailView):
     model = Agency
     template_name = "agency-detail.html"
 
@@ -22,7 +30,7 @@ class AgencyView(generic.DetailView):
         return context
 
 
-class HomeView(generic.ListView):
+class HomeView(ListView):
     template_name = "home.html"
     model = Agency
 

@@ -1,83 +1,37 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block css %}
-
-{% endblock css %}
+{% extends 'base.html' %} {% load static %} {% block css %} {% endblock css %}
 {% block content %}
 
-<!--<div style="font-size: 20em; color: black">Blam</div>
-<form action="">
-  <div class="input-group mb-4">
-    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon5" class="form-control">
-    <div class="input-group-append">
-      <button id="button-addon5" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-    </div>
-  </div>
-  <div class="input-group mb-4">
-    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon6" class="form-control">
-    <div class="input-group-append">
-      <button id="button-addon6" type="submit" class="btn btn-info"><i class="fa fa-search"></i></button>
-    </div>
-  </div>
-  <div class="input-group mb-4">
-    <div class="input-group-prepend">
-      <button id="button-addon7" type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
-    </div>
-    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon7" class="form-control">
-  </div>
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <button id="button-addon8" type="submit" class="btn btn-danger"><i class="fa fa-search"></i></button>
-    </div>
-    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon8" class="form-control">
-  </div>
-</form>-->
-<div style="padding-top: 8rem;">
+<div class="container-fluid">
     {% if agencies %}
-        <!--<ul class="agency-list">-->
-            <div class="row">
-
-                <!--<div class="card-deck">-->
-                    {% for agency in agencies %}
-            <div class="card our-card">
-          <!--<img src="..." class="card-img-top" alt="...">-->
-          <div class="card-body">
-            <h5 class="card-title">{{ agency.name }}</h5>
-            <p class="card-text"></p>
-          </div>
-          <div class="card-footer">
-              <a href="{% url 'agency-detail' agency.id %}" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <!--<a href="{% url 'agency-detail' agency.id %}"><li>{{ agency.name }}</li></a>-->
+    <ul class="agency-list">
+    
+        {% for agency in agencies %}
+        <li>
+            <a href="{% url 'agency-detail' agency.id %}">{{ agency.name }}</a>
+        </li>
         {% endfor %}
-      <!--</div>-->
-    </div>
-        <!--</ul>-->
+    
     {% else %}
-        <p>No agencies available.</p>
-    {% endif %}
+    <p>No agencies available.</p>
+    {% endif %} {% if is_paginated %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
 
-    {% if is_paginated %}
-      <ul class="pagination">
-        {% if page_obj.has_previous %}
-          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&laquo;</span></li>
-        {% endif %}
-        {% for i in paginator.page_range %}
-          {% if page_obj.number == i %}
-            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-          {% else %}
-            <li><a href="?page={{ i }}">{{ i }}</a></li>
-          {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-          <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&raquo;</span></li>
-        {% endif %}
-      </ul>
+            <span class="current">
+                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?page={{ paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+            <a href="{% url 'agency-list-all' %}">View All</a>
+        </span>
+    </div>
     {% endif %}
 </div>
 

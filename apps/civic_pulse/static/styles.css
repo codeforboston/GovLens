@@ -1,17 +1,17 @@
 .primary-color {
-  color: #2E2757;
+  color: #2e2757;
 }
 
 .primary-background {
-  background-color: #2E2757;
+  background-color: #2e2757;
 }
 
 .secondary-color {
-  color: #0F8EC5;
+  color: #0f8ec5;
 }
 
 .secondary-background {
-  background-color: #0F8EC5;
+  background-color: #0f8ec5;
 }
 
 body {
@@ -44,7 +44,7 @@ h4 {
 
 .jumbotron {
   background-color: #ff0000;
-  background-image: url('images/map_boston.png');
+  background-image: url("images/map_boston.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -141,13 +141,12 @@ h4 {
 /* total height minus navbar */
 .homebody {
   height: calc(100vh - 120px);
-  background: url('images/civicSquare.png') no-repeat fixed;
+  background: url("images/civicSquare.png") no-repeat fixed;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  
 }
 
 .navbar {
@@ -254,6 +253,7 @@ footer .glyphicon {
   user-select: none;
   box-shadow: 1px 1px 2px #0000000f;
   line-height: 1.2;
+  overflow: hidden;
 }
 
 .agency-list a {
@@ -278,10 +278,10 @@ body {
 
 @keyframes fadein {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -295,24 +295,24 @@ body {
   stroke-width: 6;
   animation: donut2 3s;
   stroke-dasharray: 80, 20;
-  filter:url(#shadow);
+  filter: url(#shadow);
 }
 
 @keyframes donut2 {
   0% {
-      stroke-dasharray: 0, 100;
+    stroke-dasharray: 0, 100;
   }
   100% {
-      stroke-dasharray: 80, 20;
+    stroke-dasharray: 80, 20;
   }
 }
 
 .our-card {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .card-header {
-  color: #2E2757;
+  color: #2e2757;
   font-size: 1.4em;
   font-style: bold;
 }
