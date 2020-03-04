@@ -35,6 +35,12 @@ Over time, we hope to show whether both individual agencies are improving or wor
 
 The project is currently in testing stages, as we work to both develop usable, accurate data and build a pipeline for regularly populating it. The site currently can run locally, but several of the data categories are filled with randomized testing data and any report cards generated are for **demonstration purposes only**. These scores do not represent actual scores for agencies.
 
+## Want to Help Out?
+
+If you'd like to contribute or learn more, please visit our [wiki page](https://github.com/JimHafner/GovLens/wiki). There,
+you will find more information about development and instructions on setting up a local version of the project that you can
+experiment with.
+
 ## Getting started basics
 
 - [ ] Make sure [you've registered for the Code for Boston Slack](https://communityinviter.com/apps/cfb-public/code-for-boston-slack-invite).
