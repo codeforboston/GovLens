@@ -39,11 +39,8 @@ The project is currently in testing stages, as we work to both develop usable, a
 
 If you'd like to contribute or learn more, please visit our [wiki page](https://github.com/JimHafner/GovLens/wiki). There,
 you will find more information about development and instructions on setting up a local version of the project that you can
-experiment with.
-
-## Getting started basics
+experiment with. Then:
 
 - [ ] Make sure [you've registered for the Code for Boston Slack](https://communityinviter.com/apps/cfb-public/code-for-boston-slack-invite).
 - [ ] Join the #MuckRock channel on Slack.
 - [ ] Ask a current member to be added to our Github organization ([They'll need to click here](https://github.com/codeforboston/GovLens/settings/collaboration)). After they've sent you an invite, you'll need to either check your email or notifications in Github (the alarm icon on the top right of your Github page) to accept the invite.
-- [ ] If you're interested in working on the backend of the site, try following the [installation instructions](https://github.com/JimHafner/GovLens/wiki/Installation-Instructions).
