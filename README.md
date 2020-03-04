@@ -10,9 +10,9 @@ GovLens is a government transparency project developed by MuckRock and Code for 
 
 ## Why?
 
-We get reminders all the time of how well our physical civic infrastructure is doing: Did my car hit a pothole? Are the swing sets covered in rust? However, it can be harder to see how well our digital civic infrastructure is holding up, particularly when it comes to the parts of the web that can be invisible to many people: How accessible is a site to people who rely on screen readers or who have reduced vision? Which third-party trackers have access to visitor data, and how is that data being guarded? Are government websites following basic best practices in utilizing secure connections?
+We get reminders all the time of how well our physical civic infrastructure is doing: Did my car hit a pothole? Are the swing sets covered in rust? However, it can be harder to see how well our digital civic infrastructure is holding up, particularly when it comes to the parts of the web that may be invisible to many users: How accessible is a site to persons who rely on screen readers or who have reduced vision? Which third-party trackers have access to visitor data, and how is that data being guarded? Are government websites following basic best practices in utilizing secure connections?
 
-While we have a [National Bridge Inventory](https://www.fhwa.dot.gov/bridge/nbi.cfm) that monitors dangerous bridges and other federal agencies that monitor other core infrastructure issues, we do not have similar insights into how strong or weak much of our digital infrastructure is.
+We have a [National Bridge Inventory](https://www.fhwa.dot.gov/bridge/nbi.cfm) that monitors dangerous bridges, and there are federal agencies that monitor other elements of core infrastructure, but we do not have similar monitoring of the strengths and weaknesses of much of our digital infrastructure.
 
 GovLens helps to provide at least the start of an answer to that, by making those oftentimes overlooked aspects of digital infrastructure more visible via public report cards for each agency in our database as well as collated data for each jurisdiction and state, letting us see which areas of the country are leading the way and which might need a little more prodding.
 
