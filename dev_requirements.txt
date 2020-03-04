@@ -1,3 +1,4 @@
 black
 flake8
+python-dotenv
 coloredlogs==10.0
