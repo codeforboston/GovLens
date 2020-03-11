@@ -4,7 +4,7 @@
 
 ## About the project
 
-GovLens is a government transparency project developed by MuckRock and Code for Boston engineers. Our mission is to create a more open, accessible, and secure democracy by examining the technical elements of federal and state government websites, evaluating their transparency, security, privacy, and accessibility, and publishing our findings to help communicate to those government agencies possible ways they could improve their infrastructures.
+GovLens is a government transparency project developed by MuckRock and Code for Boston engineers. Our mission is to create a more open, accessible, and secure democracy by 1) examining the technical elements of federal and state agency websites, 2) scoring them for transparency, security, privacy, and accessibility, and 3) publishing our findings to help communicate to those government agencies possible ways they could improve their infrastructures.
 
 ![A screenshot of what a GovLens Scorecard looks like](README_images/scorecard.png)
 
