@@ -20,7 +20,7 @@ We get reminders all the time of how well our _physical_ civic infrastructure is
 
 GovLens will provide at least the start of a solution to this problem, by making those oftentimes overlooked aspects of digital infrastructure more visible via public report cards for each agency in our database as well as by collating data for each jurisdiction and state, letting us see which areas of the country are leading the way and which might need a little more prodding.
 
-This project is inspired in part by the work of Pulse.CIO.Gov, an official federal government website that monitored the adoption of HTTPS compliance among federal websites, as well as [SecureThe.News](https://securethe.news), which did the same thing for news websites. Both of these projects brought wider visibility to the issue and provided natural and effective peer pressure for website operators to improve. We hope to do the same for government agencies at all levels, while also compiling a rich research data set for future analysis.
+This project is inspired in part by the work of Pulse.CIO.Gov, an official federal government website that monitored the adoption of HTTPS compliance among federal websites, as well as [SecureThe.News](https://securethe.news), which did the same thing for news websites. Both of these projects brought wider visibility to the issue and provided natural and effective peer pressure for website operators to improve.
 
 ## Who is this site for?
 The site is planned for three core audiences:
