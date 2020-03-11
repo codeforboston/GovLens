@@ -35,7 +35,7 @@ The project is currently in the testing stage, as we work to develop usable, acc
 
 ## Want to help out?
 
-If you'd like to contribute or learn more, please visit our [wiki page](https://github.com/JimHafner/GovLens/wiki). There,
+If you'd like to contribute or learn more, please visit our [wiki page](https://github.com/codeforboston/GovLens/wiki). There,
 you will find more information about development and instructions on setting up a local version of the project that you can
 experiment with. Then:
 
