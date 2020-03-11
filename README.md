@@ -24,7 +24,7 @@ This project is inspired in part by the work of Pulse.CIO.Gov, an official feder
 This site is planned for three core audiences:
 
 * __The general public__, so that they are better educated about the state of government digital infrastructure and why it matters.
-* __Government decision makers__, so that they can understand why they need to invest in adhering to web standards as well as see where their sites stand compared to their peers.
+* __Government decision makers__, so that they can understand why they need to invest in adhering to web standards as well as see where their sites stand compared to those of their peers.
 * __Local and national media outlets__, so as best to reach and influence the above groups.
 
 ## Current status
