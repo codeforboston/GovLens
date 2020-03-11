@@ -12,9 +12,11 @@ Here is a screenshot of what a GovLens Scorecard for an individual government ag
 
 ![A screenshot of what a GovLens Scorecard looks like](README_images/scorecard.png)
 
-## Why?
+## The Problem
 
 We get reminders all the time of how well our _physical_ civic infrastructure is doing: Did my car hit a pothole? Are the swing sets covered in rust? We have a [National Bridge Inventory](https://www.fhwa.dot.gov/bridge/nbi.cfm) that monitors dangerous bridges, and there are federal agencies that monitor other elements of core infrastructure. However, it can be harder to see how well our _digital_ civic infrastructure is holding up, particularly when it comes to the parts of the web that may be invisible to many users: How accessible is a site to persons who rely on screen readers or who have reduced vision? Which third-party trackers have access to visitor data, and how is that data being guarded? Are government websites following basic best practices in utilizing secure connections?
+
+## The Solution
 
 GovLens will provide at least the start of a solution to this problem, by making those oftentimes overlooked aspects of digital infrastructure more visible via public report cards for each agency in our database as well as by collating data for each jurisdiction and state, letting us see which areas of the country are leading the way and which might need a little more prodding.
 
