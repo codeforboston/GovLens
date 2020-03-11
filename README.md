@@ -21,7 +21,7 @@ GovLens will provide at least the start of a solution to this problem, by making
 This project is inspired in part by the work of Pulse.CIO.Gov, an official federal government website that monitored the adoption of HTTPS compliance among federal websites, as well as [SecureThe.News](https://securethe.news), which did the same thing for news websites. Both of these projects brought wider visibility to the issue and provided natural and effective peer pressure for website operators to improve. We hope to do the same for government agencies at all levels, while also compiling a rich research data set for future analysis.
 
 ## Who is this site for?
-This site has three planned core audiences:
+This site is planned for three core audiences:
 
 * __The general public__, so that they are better educated about the state of government digital infrastructure and why it matters.
 * __Government decision makers__, so that they can understand why they need to invest in adhering to web standards as well as see where their sites stand compared to their peers.
